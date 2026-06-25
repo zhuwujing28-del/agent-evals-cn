@@ -135,3 +135,9 @@ description: Use when designing, reviewing, or improving AI agent, Codex skill, 
 - 每个升级建议都应对应至少一个失败 case。
 - 修改后应重跑 baseline cases。
 - 如果不能实际运行 eval，输出可执行的 eval plan，并说明未运行原因。
+
+## 维护建议
+
+- 保留一个最小 baseline 集，不要只加新 case 不跑旧 case。
+- 新增 case 时，尽量让它对应一个真实失败模式。
+- 如果某个升级反复引入回归，优先缩小改动范围，而不是不断加复杂规则。

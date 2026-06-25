@@ -22,6 +22,13 @@
 | `docs/maintenance.md` | 维护和升级流程 |
 | `scripts/validate.py` | 基础结构校验 |
 
+## 为什么这个项目值得维护
+
+- 这是一个真实会反复升级的工作流，而不是一次性提示词。
+- 每次改 prompt、改 skill、改 agent 流程，都可以复用同一套 eval 思路。
+- 中文场景很多，失败也很多，特别适合沉淀成回归集。
+- 这个仓库本身也能被 Codex 维护，形成“自己评自己、自己升级自己”的闭环。
+
 ## 适合谁
 
 - 正在写 Codex skills 的开发者。
@@ -65,6 +72,7 @@ Copy-Item -Recurse .\skills\agent-evals-cn $HOME\.codex\skills\
 
 ## 路线图
 
+- 建立一组稳定的中文 baseline evals。
 - 增加 GitHub Action，自动校验 skill 结构。
 - 增加更多 eval case 示例：PR review、issue triage、OpenAI API 问答、网页提取。
 - 增加 JSON/Markdown 双格式评测报告。
