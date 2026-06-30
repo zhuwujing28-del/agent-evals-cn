@@ -15,6 +15,7 @@ This project follows a lightweight 0.x release process while the eval method, te
 - Issue templates for eval case proposals and skill upgrade requests.
 - OSS readiness tracker for application and maintenance planning.
 - Usage report applying `agent-evals-cn` to `codex-skills-cn` maintainer skills.
+- Baseline eval case for GitHub Actions CI failure diagnosis.
 
 ### Changed
 

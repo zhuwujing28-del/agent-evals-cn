@@ -19,6 +19,7 @@
 | `skills/agent-evals-cn` | 核心 Codex skill |
 | `examples/eval-case-template.md` | 单个 eval case 模板 |
 | `examples/eval-report-template.md` | 评测报告模板 |
+| `examples/ci-failure-diagnosis-case.md` | GitHub Actions 失败诊断 eval case |
 | `docs/maintenance.md` | 维护和升级流程 |
 | `docs/oss-readiness.md` | 开源维护和申请准备度追踪 |
 | `docs/usage-reports/` | 真实使用记录和跨仓库评测报告 |
@@ -76,7 +77,7 @@ Copy-Item -Recurse .\skills\agent-evals-cn $HOME\.codex\skills\
 
 - 建立一组稳定的中文 baseline evals。
 - 增加 GitHub Action，自动校验 skill 结构。
-- 增加更多 eval case 示例：PR review、issue triage、OpenAI API 问答、网页提取。
+- 增加更多 eval case 示例：PR review、issue triage、CI 失败诊断、OpenAI API 问答、网页提取。
 - 增加 JSON/Markdown 双格式评测报告。
 - 增加 changelog 和版本升级记录。
 
