@@ -20,6 +20,7 @@
 | `examples/eval-case-template.md` | 单个 eval case 模板 |
 | `examples/eval-report-template.md` | 评测报告模板 |
 | `examples/ci-failure-diagnosis-case.md` | GitHub Actions 失败诊断 eval case |
+| `examples/release-readiness-case.md` | skill 仓库发布准备 eval case |
 | `docs/maintenance.md` | 维护和升级流程 |
 | `docs/oss-readiness.md` | 开源维护和申请准备度追踪 |
 | `docs/usage-reports/` | 真实使用记录和跨仓库评测报告 |
