@@ -17,6 +17,8 @@ This project follows a lightweight 0.x release process while the eval method, te
 - Usage report applying `agent-evals-cn` to `codex-skills-cn` maintainer skills.
 - Baseline eval case for GitHub Actions CI failure diagnosis.
 - Baseline eval case for Codex skill repository release readiness.
+- Baseline eval case for dependency upgrade review.
+- Baseline eval case for security advisory triage.
 
 ### Changed
 
