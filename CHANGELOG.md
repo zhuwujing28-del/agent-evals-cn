@@ -8,6 +8,7 @@ This project follows a lightweight 0.x release process while the eval method, te
 
 ### Added
 
+- Added `APPLICATION.md` for Codex for Open Source application preparation.
 - Core `agent-evals-cn` Codex skill for Chinese agent, prompt, and workflow evaluation.
 - Baseline examples for PR review, issue triage, and OpenAI docs answer evaluation.
 - Reusable eval case and eval report templates.

@@ -25,6 +25,7 @@
 | `docs/oss-readiness.md` | 开源维护和申请准备度追踪 |
 | `docs/usage-reports/` | 真实使用记录和跨仓库评测报告 |
 | `scripts/validate.py` | 基础结构校验 |
+| `APPLICATION.md` | Codex for Open Source 申请说明 |
 
 ## 为什么这个项目值得维护
 
