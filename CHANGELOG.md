@@ -20,6 +20,7 @@ This project follows a lightweight 0.x release process while the eval method, te
 - Baseline eval case for Codex skill repository release readiness.
 - Baseline eval case for dependency upgrade review.
 - Baseline eval case for security advisory triage.
+- Security policy for redaction, unsafe eval boundaries, and maintainer response.
 
 ### Changed
 
