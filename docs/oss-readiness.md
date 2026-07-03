@@ -6,7 +6,7 @@ This tracker keeps `agent-evals-cn` honest as an open-source project. The goal i
 
 - Clear niche: Chinese AI agent, Codex skill, and prompt workflow evals.
 - A reusable core skill with safety boundaries and validation guidance.
-- Baseline examples for PR review, issue triage, CI failure diagnosis, release readiness, dependency upgrades, security advisory triage, context budget management, OpenAI docs answers, and web extraction boundaries.
+- Baseline examples for PR review, issue triage, CI failure diagnosis, release readiness, dependency upgrades, security advisory triage, context budget management, OpenAI docs answers, web extraction boundaries, and MCP vs skill boundary decisions.
 - GitHub Actions validation for repository structure.
 - Issue templates for eval cases and skill upgrades.
 
@@ -19,7 +19,7 @@ This tracker keeps `agent-evals-cn` honest as an open-source project. The goal i
 
 ## Near-term checklist
 
-- [ ] Add 10 baseline eval cases. Current: 9.
+- [x] Add 10 baseline eval cases. Current: 10.
 - [x] Add `CHANGELOG.md`.
 - [ ] Add a README CI badge after the first workflow run is visible.
 - [x] Add one usage report from applying the skill to `codex-skills-cn`.
