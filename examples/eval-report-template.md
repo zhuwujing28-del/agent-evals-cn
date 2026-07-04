@@ -25,6 +25,8 @@
 | --- | --- | --- | --- |
 | | | | |
 
+评分口径：使用 `docs/scoring-rubric.md` 的 correctness / usefulness / safety / brevity 四维 0-2 分规则。
+
 ## 建议升级
 
 1. 

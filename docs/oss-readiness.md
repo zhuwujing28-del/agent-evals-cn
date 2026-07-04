@@ -9,10 +9,12 @@ This tracker keeps `agent-evals-cn` honest as an open-source project. The goal i
 - Baseline examples for PR review, issue triage, CI failure diagnosis, release readiness, dependency upgrades, security advisory triage, context budget management, OpenAI docs answers, web extraction boundaries, and MCP vs skill boundary decisions.
 - GitHub Actions validation for repository structure.
 - Issue templates for eval cases and skill upgrades.
+- A lightweight scoring rubric for consistent human-reviewed eval reports.
 
 ## Current gaps
 
 - More real-world eval cases are needed, especially cases replayed from failed runs.
+- Eval results are still manually judged; `docs/scoring-rubric.md` reduces variance but does not replace reviewer judgment.
 - No external issues or PRs yet.
 - No tagged release yet.
 - No CI badge in README yet.
@@ -21,6 +23,7 @@ This tracker keeps `agent-evals-cn` honest as an open-source project. The goal i
 
 - [x] Add 10 baseline eval cases. Current: 10.
 - [x] Add `CHANGELOG.md`.
+- [x] Add a baseline scoring rubric for human-reviewed reports.
 - [ ] Add a README CI badge after the first workflow run is visible.
 - [x] Add one usage report from applying the skill to `codex-skills-cn`.
 - [ ] Tag `v0.1.0` after the baseline set is stable.
