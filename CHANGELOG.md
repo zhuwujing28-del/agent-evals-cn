@@ -24,6 +24,7 @@ This project follows a lightweight 0.x release process while the eval method, te
 - Baseline eval case for MCP vs Codex skill boundary decisions.
 - Security policy for redaction, unsafe eval boundaries, and maintainer response.
 - Lightweight scoring rubric for consistent human-reviewed eval reports.
+- README validation badge for visible CI status.
 
 ### Changed
 
