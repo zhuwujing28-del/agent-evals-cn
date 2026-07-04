@@ -24,7 +24,7 @@ This tracker keeps `agent-evals-cn` honest as an open-source project. The goal i
 - [x] Add 10 baseline eval cases. Current: 10.
 - [x] Add `CHANGELOG.md`.
 - [x] Add a baseline scoring rubric for human-reviewed reports.
-- [ ] Add a README CI badge after the first workflow run is visible.
+- [x] Add a README CI badge after the first workflow run is visible.
 - [x] Add one usage report from applying the skill to `codex-skills-cn`.
 - [ ] Tag `v0.1.0` after the baseline set is stable.
 

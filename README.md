@@ -1,5 +1,7 @@
 # agent-evals-cn
 
+[![validate](https://github.com/zhuwujing28-del/agent-evals-cn/actions/workflows/validate.yml/badge.svg)](https://github.com/zhuwujing28-del/agent-evals-cn/actions/workflows/validate.yml)
+
 面向中文开发者的 AI Agent / Codex skill / prompt 工作流评测与迭代仓库。
 
 现在大家都在做 agent、MCP、Codex skills、自动化工作流，但很多项目的问题不是“能不能跑一次”，而是：
