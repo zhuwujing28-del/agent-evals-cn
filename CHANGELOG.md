@@ -25,6 +25,7 @@ This project follows a lightweight 0.x release process while the eval method, te
 - Security policy for redaction, unsafe eval boundaries, and maintainer response.
 - Lightweight scoring rubric for consistent human-reviewed eval reports.
 - README validation badge for visible CI status.
+- `v0.1.0` release checklist for tag readiness review.
 
 ### Changed
 
@@ -32,6 +33,4 @@ This project follows a lightweight 0.x release process while the eval method, te
 
 ### Pending Before v0.1.0
 
-- Add more baseline eval cases across at least three maintainer workflows.
-- Add a README CI badge after confirming the public workflow status.
 - Tag `v0.1.0` only after the baseline set is stable enough to rerun.

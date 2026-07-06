@@ -17,7 +17,6 @@ This tracker keeps `agent-evals-cn` honest as an open-source project. The goal i
 - Eval results are still manually judged; `docs/scoring-rubric.md` reduces variance but does not replace reviewer judgment.
 - No external issues or PRs yet.
 - No tagged release yet.
-- No CI badge in README yet.
 
 ## Near-term checklist
 
@@ -26,6 +25,7 @@ This tracker keeps `agent-evals-cn` honest as an open-source project. The goal i
 - [x] Add a baseline scoring rubric for human-reviewed reports.
 - [x] Add a README CI badge after the first workflow run is visible.
 - [x] Add one usage report from applying the skill to `codex-skills-cn`.
+- [x] Add a `v0.1.0` release checklist.
 - [ ] Tag `v0.1.0` after the baseline set is stable.
 
 ## Quality bar for new eval cases
