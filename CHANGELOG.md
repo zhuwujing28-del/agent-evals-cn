@@ -30,6 +30,7 @@ This project follows a lightweight 0.x release process while the eval method, te
 ### Changed
 
 - Established a maintenance flow that requires real failure cases, baseline reruns, and documented limitations before upgrades.
+- Strengthened validation so every baseline eval case needs a unique `case-id` and core review sections.
 
 ### Pending Before v0.1.0
 

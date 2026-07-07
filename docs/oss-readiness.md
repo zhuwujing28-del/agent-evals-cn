@@ -10,6 +10,7 @@ This tracker keeps `agent-evals-cn` honest as an open-source project. The goal i
 - GitHub Actions validation for repository structure, surfaced by a README badge.
 - Issue templates for eval cases and skill upgrades.
 - A lightweight scoring rubric for consistent human-reviewed eval reports.
+- Validation now checks baseline eval case IDs and required sections, reducing silent placeholder drift.
 
 ## Current gaps
 
@@ -26,6 +27,7 @@ This tracker keeps `agent-evals-cn` honest as an open-source project. The goal i
 - [x] Add a README CI badge after the first workflow run is visible.
 - [x] Add one usage report from applying the skill to `codex-skills-cn`.
 - [x] Add a `v0.1.0` release checklist.
+- [x] Validate baseline eval case structure, not only the core skill file.
 - [ ] Tag `v0.1.0` after the baseline set is stable.
 
 ## Quality bar for new eval cases
