@@ -6,6 +6,12 @@ This project follows a lightweight 0.x release process while the eval method, te
 
 ## Unreleased
 
+_No unreleased changes._
+
+## v0.1.0 - 2026-07-08
+
+The first tagged release includes the baseline Chinese eval set, reusable templates, validation, and release-readiness documentation.
+
 ### Added
 
 - Added `APPLICATION.md` for Codex for Open Source application preparation.
@@ -32,6 +38,6 @@ This project follows a lightweight 0.x release process while the eval method, te
 - Established a maintenance flow that requires real failure cases, baseline reruns, and documented limitations before upgrades.
 - Strengthened validation so every baseline eval case needs a unique `case-id` and core review sections.
 
-### Pending Before v0.1.0
+### Release status
 
-- Tag `v0.1.0` only after the baseline set is stable enough to rerun.
+- Ready for an annotated `v0.1.0` tag once the public `main` workflow is confirmed green.
