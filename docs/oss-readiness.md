@@ -11,13 +11,14 @@ This tracker keeps `agent-evals-cn` honest as an open-source project. The goal i
 - Issue templates for eval cases and skill upgrades.
 - A lightweight scoring rubric for consistent human-reviewed eval reports.
 - Validation now checks baseline eval case IDs and required sections, reducing silent placeholder drift.
+- Post-`v0.1.0` tag audit documents which readiness work landed after the first public tag.
 
 ## Current gaps
 
 - More real-world eval cases are needed, especially cases replayed from failed runs.
 - Eval results are still manually judged; `docs/scoring-rubric.md` reduces variance but does not replace reviewer judgment.
 - No external issues or PRs yet.
-- No tagged release yet.
+- The public `v0.1.0` tag exists, but it points to the first application-materials baseline before later eval hardening.
 
 ## Near-term checklist
 
@@ -28,7 +29,8 @@ This tracker keeps `agent-evals-cn` honest as an open-source project. The goal i
 - [x] Add one usage report from applying the skill to `codex-skills-cn`.
 - [x] Add a `v0.1.0` release checklist.
 - [x] Validate baseline eval case structure, not only the core skill file.
-- [ ] Tag `v0.1.0` after the baseline set is stable.
+- [x] Publish `v0.1.0`.
+- [ ] Prepare a follow-up patch tag for the current hardened baseline.
 
 ## Quality bar for new eval cases
 

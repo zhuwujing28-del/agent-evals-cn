@@ -6,7 +6,9 @@ This project follows a lightweight 0.x release process while the eval method, te
 
 ## Unreleased
 
-_No unreleased changes._
+### Added
+
+- Added a post-`v0.1.0` audit documenting the published tag target and follow-up patch-release path.
 
 ## v0.1.0 - 2026-07-08
 
