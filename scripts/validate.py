@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import re
 import sys
 from pathlib import Path
 
@@ -7,6 +8,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 SKILL = ROOT / "skills" / "agent-evals-cn" / "SKILL.md"
 EXAMPLES = ROOT / "examples"
+MARKDOWN_LINK_RE = re.compile(r"!?\[[^\]]*\]\(([^)]+)\)")
 REQUIRED = [
     "name: agent-evals-cn",
     "description:",
@@ -57,6 +59,36 @@ def validate_eval_cases() -> list[str]:
     return errors
 
 
+def validate_markdown_links() -> list[str]:
+    errors: list[str] = []
+    for md_path in sorted(ROOT.rglob("*.md")):
+        text = md_path.read_text(encoding="utf-8")
+        for match in MARKDOWN_LINK_RE.finditer(text):
+            target = match.group(1).strip()
+            if (
+                not target
+                or target.startswith(("#", "http://", "https://", "mailto:"))
+                or "://" in target
+            ):
+                continue
+
+            link_path = target.split("#", 1)[0]
+            if not link_path:
+                continue
+
+            resolved = (md_path.parent / link_path).resolve()
+            try:
+                resolved.relative_to(ROOT)
+            except ValueError:
+                continue
+
+            if not resolved.exists():
+                rel_md = md_path.relative_to(ROOT)
+                errors.append(f"{rel_md}: broken local link {target}")
+
+    return errors
+
+
 def main() -> int:
     if not SKILL.exists():
         print(f"Missing {SKILL}")
@@ -74,6 +106,13 @@ def main() -> int:
     if case_errors:
         print("Validation failed:")
         for error in case_errors:
+            print(f"- {error}")
+        return 1
+
+    link_errors = validate_markdown_links()
+    if link_errors:
+        print("Validation failed:")
+        for error in link_errors:
             print(f"- {error}")
         return 1
 
