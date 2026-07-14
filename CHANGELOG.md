@@ -8,6 +8,7 @@ This project follows a lightweight 0.x release process while the eval method, te
 
 ### Added
 
+- Added a human eval review runbook for repeatable manual scoring, release spot checks, and follow-up decisions.
 - Added a `v0.1.1` patch-release checklist for packaging post-`v0.1.0` eval hardening without moving the published tag.
 - Added a post-`v0.1.0` audit documenting the published tag target and follow-up patch-release path.
 

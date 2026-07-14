@@ -10,6 +10,7 @@ This tracker keeps `agent-evals-cn` honest as an open-source project. The goal i
 - GitHub Actions validation for repository structure, surfaced by a README badge.
 - Issue templates for eval cases and skill upgrades.
 - A lightweight scoring rubric for consistent human-reviewed eval reports.
+- A human eval review runbook for repeatable manual scoring and release spot checks.
 - Validation now checks baseline eval case IDs and required sections, reducing silent placeholder drift.
 - Post-`v0.1.0` tag audit documents which readiness work landed after the first public tag.
 - A `v0.1.1` patch-release checklist keeps the follow-up tag scoped to already-landed eval hardening.
@@ -17,7 +18,7 @@ This tracker keeps `agent-evals-cn` honest as an open-source project. The goal i
 ## Current gaps
 
 - More real-world eval cases are needed, especially cases replayed from failed runs.
-- Eval results are still manually judged; `docs/scoring-rubric.md` reduces variance but does not replace reviewer judgment.
+- Eval results are still manually judged; `docs/scoring-rubric.md` and `docs/human-eval-review-runbook.md` reduce variance but do not replace reviewer judgment.
 - No external issues or PRs yet.
 - The public `v0.1.0` tag exists, but it points to the first application-materials baseline before later eval hardening.
 
@@ -26,6 +27,7 @@ This tracker keeps `agent-evals-cn` honest as an open-source project. The goal i
 - [x] Add 10 baseline eval cases. Current: 10.
 - [x] Add `CHANGELOG.md`.
 - [x] Add a baseline scoring rubric for human-reviewed reports.
+- [x] Add a human review runbook for repeatable manual eval scoring.
 - [x] Add a README CI badge after the first workflow run is visible.
 - [x] Add one usage report from applying the skill to `codex-skills-cn`.
 - [x] Add a `v0.1.0` release checklist.
