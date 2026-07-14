@@ -4,22 +4,31 @@ All notable changes to `agent-evals-cn` are documented here.
 
 This project follows a lightweight 0.x release process while the eval method, templates, and baseline cases are still stabilizing.
 
-## Unreleased
+## v0.1.1 - Unreleased
 
 ### Added
 
 - Added a human eval review runbook for repeatable manual scoring, release spot checks, and follow-up decisions.
 - Added a `v0.1.1` patch-release checklist for packaging post-`v0.1.0` eval hardening without moving the published tag.
 - Added a post-`v0.1.0` audit documenting the published tag target and follow-up patch-release path.
+- Added local Markdown link validation for repository documentation.
+- Added context budget and MCP vs Codex skill boundary eval cases.
+- Added security policy for redaction, unsafe eval boundaries, and maintainer response.
+- Added a lightweight scoring rubric for consistent human-reviewed eval reports.
+- Added README validation badge and a `v0.1.0` release checklist for tag readiness review.
+
+### Changed
+
+- Strengthened validation so every baseline eval case needs a unique `case-id` and core review sections.
+- Added release-readiness docs for the hardened post-tag baseline.
 
 ## v0.1.0 - 2026-07-08
 
-The first tagged release includes the baseline Chinese eval set, reusable templates, validation, and release-readiness documentation.
+The first public tag captured the early application-materials baseline. Later eval, validation, CI, security, and release-readiness hardening remains on `main` until the `v0.1.1` patch tag.
 
 ### Added
 
 - Added `APPLICATION.md` for Codex for Open Source application preparation.
-- Added context budget eval case for long PR review context trimming.
 - Core `agent-evals-cn` Codex skill for Chinese agent, prompt, and workflow evaluation.
 - Baseline examples for PR review, issue triage, and OpenAI docs answer evaluation.
 - Reusable eval case and eval report templates.
@@ -31,17 +40,11 @@ The first tagged release includes the baseline Chinese eval set, reusable templa
 - Baseline eval case for Codex skill repository release readiness.
 - Baseline eval case for dependency upgrade review.
 - Baseline eval case for security advisory triage.
-- Baseline eval case for MCP vs Codex skill boundary decisions.
-- Security policy for redaction, unsafe eval boundaries, and maintainer response.
-- Lightweight scoring rubric for consistent human-reviewed eval reports.
-- README validation badge for visible CI status.
-- `v0.1.0` release checklist for tag readiness review.
 
 ### Changed
 
 - Established a maintenance flow that requires real failure cases, baseline reruns, and documented limitations before upgrades.
-- Strengthened validation so every baseline eval case needs a unique `case-id` and core review sections.
 
 ### Release status
 
-- Ready for an annotated `v0.1.0` tag once the public `main` workflow is confirmed green.
+- Published as the historical `v0.1.0` tag. Do not move or rewrite this tag.
