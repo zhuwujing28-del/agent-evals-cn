@@ -8,6 +8,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 SKILL = ROOT / "skills" / "agent-evals-cn" / "SKILL.md"
 EXAMPLES = ROOT / "examples"
+CASE_INDEX = ROOT / "docs" / "eval-case-index.md"
 MARKDOWN_LINK_RE = re.compile(r"!?\[[^\]]*\]\(([^)]+)\)")
 REQUIRED = [
     "name: agent-evals-cn",
@@ -59,6 +60,22 @@ def validate_eval_cases() -> list[str]:
     return errors
 
 
+def validate_eval_case_index() -> list[str]:
+    errors: list[str] = []
+    case_paths = sorted(EXAMPLES.glob("*-case.md"))
+
+    if not CASE_INDEX.exists():
+        return [f"{CASE_INDEX.relative_to(ROOT)}: missing eval case index"]
+
+    index_text = CASE_INDEX.read_text(encoding="utf-8")
+    for path in case_paths:
+        rel_path = path.relative_to(ROOT).as_posix()
+        if rel_path not in index_text:
+            errors.append(f"{CASE_INDEX.relative_to(ROOT)}: missing {rel_path}")
+
+    return errors
+
+
 def validate_markdown_links() -> list[str]:
     errors: list[str] = []
     for md_path in sorted(ROOT.rglob("*.md")):
@@ -106,6 +123,13 @@ def main() -> int:
     if case_errors:
         print("Validation failed:")
         for error in case_errors:
+            print(f"- {error}")
+        return 1
+
+    index_errors = validate_eval_case_index()
+    if index_errors:
+        print("Validation failed:")
+        for error in index_errors:
             print(f"- {error}")
         return 1
 

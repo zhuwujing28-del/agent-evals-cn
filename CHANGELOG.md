@@ -4,11 +4,12 @@ All notable changes to `agent-evals-cn` are documented here.
 
 This project follows a lightweight 0.x release process while the eval method, templates, and baseline cases are still stabilizing.
 
-## v0.1.1 - Unreleased
+## v0.1.1 - 2026-07-15
 
 ### Added
 
 - Added a human eval review runbook for repeatable manual scoring, release spot checks, and follow-up decisions.
+- Added a baseline eval case index that maps each case to its tested capability and primary failure mode.
 - Added a `v0.1.1` patch-release checklist for packaging post-`v0.1.0` eval hardening without moving the published tag.
 - Added a post-`v0.1.0` audit documenting the published tag target and follow-up patch-release path.
 - Added local Markdown link validation for repository documentation.
@@ -20,11 +21,12 @@ This project follows a lightweight 0.x release process while the eval method, te
 ### Changed
 
 - Strengthened validation so every baseline eval case needs a unique `case-id` and core review sections.
+- Strengthened validation so every baseline eval case must be listed in the eval case index.
 - Added release-readiness docs for the hardened post-tag baseline.
 
 ## v0.1.0 - 2026-07-08
 
-The first public tag captured the early application-materials baseline. Later eval, validation, CI, security, and release-readiness hardening remains on `main` until the `v0.1.1` patch tag.
+The first public tag captured the early application-materials baseline. Later eval, validation, CI, security, and release-readiness hardening was packaged in the `v0.1.1` patch tag.
 
 ### Added
 
