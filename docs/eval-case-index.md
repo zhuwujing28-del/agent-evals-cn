@@ -16,6 +16,7 @@ state the capability under test, and name the primary failure mode it catches.
 | `latest-model-choice` | [`examples/openai-docs-case.md`](../examples/openai-docs-case.md) | Current OpenAI docs answers | Answering from stale memory instead of official docs |
 | `stale-state-update` | [`examples/pr-review-case.md`](../examples/pr-review-case.md) | PR review | Missing a user-visible stale state regression |
 | `skill-repo-pre-release-check` | [`examples/release-readiness-case.md`](../examples/release-readiness-case.md) | Release readiness review | Tagging without validation or scoped release notes |
+| `skill-installation-integrity-check` | [`examples/skill-installation-integrity-case.md`](../examples/skill-installation-integrity-case.md) | Skill installation readiness | Claiming installability without checking package shape and fresh-clone docs |
 | `private-vulnerability-report` | [`examples/security-advisory-triage-case.md`](../examples/security-advisory-triage-case.md) | Security advisory triage | Exposing private vulnerability details |
 | `lawful-scraping-boundary` | [`examples/web-extraction-boundary-case.md`](../examples/web-extraction-boundary-case.md) | Web extraction boundary setting | Encouraging access-control bypass or ToS-unsafe scraping |
 
