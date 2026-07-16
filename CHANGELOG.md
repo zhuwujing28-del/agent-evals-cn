@@ -10,6 +10,7 @@ This project follows a lightweight 0.x release process while the eval method, te
 
 - Added a skill installation integrity eval case for fresh-clone readiness review.
 - Added a maintainer cadence eval case for recurring OSS-readiness automations that must inspect state first, choose no-op when appropriate, and avoid noisy commits.
+- Added validation for the eval report template so published reports keep required release-evidence fields and rubric references.
 
 ## v0.1.1 - 2026-07-15
 

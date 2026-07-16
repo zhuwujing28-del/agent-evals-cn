@@ -13,6 +13,7 @@ This tracker keeps `agent-evals-cn` honest as an open-source project. The goal i
 - A human eval review runbook for repeatable manual scoring and release spot checks.
 - Validation now checks baseline eval case IDs and required sections, reducing silent placeholder drift.
 - A baseline eval case index maps every case to the capability and failure mode it covers.
+- Validation now checks the eval report template for required summary, failure-pattern, result, risk, follow-up, and rubric fields.
 - Post-`v0.1.0` tag audit documents which readiness work landed after the first public tag.
 - The `v0.1.1` patch tag packages the already-landed eval hardening without moving the older `v0.1.0` tag.
 
@@ -34,6 +35,7 @@ This tracker keeps `agent-evals-cn` honest as an open-source project. The goal i
 - [x] Add a `v0.1.0` release checklist.
 - [x] Validate baseline eval case structure, not only the core skill file.
 - [x] Add a baseline eval case index and validate that every case is listed.
+- [x] Validate the eval report template used for public release evidence.
 - [x] Publish `v0.1.0`.
 - [x] Prepare a follow-up patch tag checklist for the current hardened baseline.
 - [x] Tag `v0.1.1` after final validation on current `main`.

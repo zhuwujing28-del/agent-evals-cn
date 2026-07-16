@@ -9,6 +9,7 @@ ROOT = Path(__file__).resolve().parents[1]
 SKILL = ROOT / "skills" / "agent-evals-cn" / "SKILL.md"
 EXAMPLES = ROOT / "examples"
 CASE_INDEX = ROOT / "docs" / "eval-case-index.md"
+REPORT_TEMPLATE = EXAMPLES / "eval-report-template.md"
 MARKDOWN_LINK_RE = re.compile(r"!?\[[^\]]*\]\(([^)]+)\)")
 REQUIRED = [
     "name: agent-evals-cn",
@@ -24,6 +25,17 @@ CASE_REQUIRED = [
     "输入：",
     "期望行为：",
     "失败判定：",
+]
+REPORT_REQUIRED = [
+    "评测对象：",
+    "版本 / commit：",
+    "## 汇总",
+    "## 主要失败模式",
+    "## 详细结果",
+    "## 建议升级",
+    "## 回归风险",
+    "## 下一轮新增 eval",
+    "correctness / usefulness / safety / brevity",
 ]
 
 
@@ -74,6 +86,19 @@ def validate_eval_case_index() -> list[str]:
             errors.append(f"{CASE_INDEX.relative_to(ROOT)}: missing {rel_path}")
 
     return errors
+
+
+def validate_report_template() -> list[str]:
+    if not REPORT_TEMPLATE.exists():
+        return [f"{REPORT_TEMPLATE.relative_to(ROOT)}: missing eval report template"]
+
+    text = REPORT_TEMPLATE.read_text(encoding="utf-8")
+    rel_path = REPORT_TEMPLATE.relative_to(ROOT)
+    return [
+        f"{rel_path}: missing {item}"
+        for item in REPORT_REQUIRED
+        if item not in text
+    ]
 
 
 def validate_markdown_links() -> list[str]:
@@ -130,6 +155,13 @@ def main() -> int:
     if index_errors:
         print("Validation failed:")
         for error in index_errors:
+            print(f"- {error}")
+        return 1
+
+    report_errors = validate_report_template()
+    if report_errors:
+        print("Validation failed:")
+        for error in report_errors:
             print(f"- {error}")
         return 1
 
