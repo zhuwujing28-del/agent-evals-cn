@@ -4,6 +4,13 @@ All notable changes to `agent-evals-cn` are documented here.
 
 This project follows a lightweight 0.x release process while the eval method, templates, and baseline cases are still stabilizing.
 
+## Unreleased
+
+### Added
+
+- Added a skill installation integrity eval case for fresh-clone readiness review.
+- Added a maintainer cadence eval case for recurring OSS-readiness automations that must inspect state first, choose no-op when appropriate, and avoid noisy commits.
+
 ## v0.1.1 - 2026-07-15
 
 ### Added

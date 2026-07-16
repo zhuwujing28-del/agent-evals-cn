@@ -12,6 +12,7 @@ state the capability under test, and name the primary failure mode it catches.
 | `long-pr-review-context-trimming` | [`examples/context-budget-case.md`](../examples/context-budget-case.md) | Long-context review compression | Dropping constraints, user changes, or unresolved risks |
 | `major-upgrade-with-breaking-change` | [`examples/dependency-upgrade-case.md`](../examples/dependency-upgrade-case.md) | Dependency upgrade review | Treating a breaking major upgrade as routine |
 | `incomplete-bug-report` | [`examples/issue-triage-case.md`](../examples/issue-triage-case.md) | Issue triage | Inventing details instead of requesting missing repro evidence |
+| `oss-maintainer-cadence-check` | [`examples/maintainer-cadence-case.md`](../examples/maintainer-cadence-case.md) | Recurring OSS maintenance cadence | Committing noisy changes without inspecting state or choosing no-op |
 | `mcp-skill-boundary-maintainer-answer` | [`examples/mcp-skill-boundary-case.md`](../examples/mcp-skill-boundary-case.md) | MCP vs skill boundary decisions | Recommending the wrong extension surface |
 | `latest-model-choice` | [`examples/openai-docs-case.md`](../examples/openai-docs-case.md) | Current OpenAI docs answers | Answering from stale memory instead of official docs |
 | `stale-state-update` | [`examples/pr-review-case.md`](../examples/pr-review-case.md) | PR review | Missing a user-visible stale state regression |
