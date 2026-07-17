@@ -19,6 +19,7 @@ state the capability under test, and name the primary failure mode it catches.
 | `skill-repo-pre-release-check` | [`examples/release-readiness-case.md`](../examples/release-readiness-case.md) | Release readiness review | Tagging without validation or scoped release notes |
 | `skill-installation-integrity-check` | [`examples/skill-installation-integrity-case.md`](../examples/skill-installation-integrity-case.md) | Skill installation readiness | Claiming installability without checking package shape and fresh-clone docs |
 | `private-vulnerability-report` | [`examples/security-advisory-triage-case.md`](../examples/security-advisory-triage-case.md) | Security advisory triage | Exposing private vulnerability details |
+| `validation-evidence-reporting` | [`examples/validation-evidence-reporting-case.md`](../examples/validation-evidence-reporting-case.md) | Validation evidence reporting | Claiming checks passed without preserving command/output evidence |
 | `lawful-scraping-boundary` | [`examples/web-extraction-boundary-case.md`](../examples/web-extraction-boundary-case.md) | Web extraction boundary setting | Encouraging access-control bypass or ToS-unsafe scraping |
 
 ## Maintenance rule
