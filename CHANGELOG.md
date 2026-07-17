@@ -8,6 +8,7 @@ This project follows a lightweight 0.x release process while the eval method, te
 
 ### Added
 
+- Added scoring calibration notes for manual eval reports that gate releases or public application evidence.
 - Added a validation evidence reporting eval case for final updates that must separate local checks, CI evidence, and push/credential status.
 - Added a skill installation integrity eval case for fresh-clone readiness review.
 - Added a maintainer cadence eval case for recurring OSS-readiness automations that must inspect state first, choose no-op when appropriate, and avoid noisy commits.

@@ -35,6 +35,7 @@ Do not include private repository contents, secrets, customer data, access token
 3. Score against the rubric.
 
    Use [`scoring-rubric.md`](scoring-rubric.md) as the main source of truth. Prefer short evidence bullets over broad impressions. Quote only the minimum text needed to support the score.
+   For release or public application evidence, use [`scoring-calibration.md`](scoring-calibration.md) to compare scores against shared anchors before publishing.
 
 4. Classify the result.
 
