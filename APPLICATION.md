@@ -20,7 +20,7 @@ This project provides a lightweight eval method for those questions.
 ## Current status
 
 - Core `agent-evals-cn` skill.
-- 10 baseline eval cases across maintainer workflows.
+- 13 baseline eval cases across maintainer workflows.
 - Eval case and report templates.
 - GitHub Actions validation.
 - Changelog, OSS readiness tracker, and usage report.
