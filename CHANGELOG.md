@@ -8,6 +8,7 @@ This project follows a lightweight 0.x release process while the eval method, te
 
 ### Added
 
+- Added a public issue triage note mapping the open baseline-expansion and manual-judging issues to current evidence and next actions.
 - Corrected application and readiness notes to reflect the current 13-case baseline eval set.
 - Added scoring calibration notes for manual eval reports that gate releases or public application evidence.
 - Added a validation evidence reporting eval case for final updates that must separate local checks, CI evidence, and push/credential status.

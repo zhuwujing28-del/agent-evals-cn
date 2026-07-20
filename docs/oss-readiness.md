@@ -14,6 +14,7 @@ This tracker keeps `agent-evals-cn` honest as an open-source project. The goal i
 - Scoring calibration notes reduce reviewer drift for release and public application evidence.
 - Validation now checks baseline eval case IDs and required sections, reducing silent placeholder drift.
 - A baseline eval case index maps every case to the capability and failure mode it covers.
+- Latest public issue triage: [public-issue-triage-2026-07-20.md](public-issue-triage-2026-07-20.md).
 - Validation now checks the eval report template for required summary, failure-pattern, result, risk, follow-up, and rubric fields.
 - Post-`v0.1.0` tag audit documents which readiness work landed after the first public tag.
 - The `v0.1.1` patch tag packages the already-landed eval hardening without moving the older `v0.1.0` tag.
