@@ -6,7 +6,7 @@ This tracker keeps `agent-evals-cn` honest as an open-source project. The goal i
 
 - Clear niche: Chinese AI agent, Codex skill, and prompt workflow evals.
 - A reusable core skill with safety boundaries and validation guidance.
-- Baseline examples for PR review, issue triage, CI failure diagnosis, release readiness, dependency upgrades, security advisory triage, context budget management, OpenAI docs answers, web extraction boundaries, MCP vs skill boundary decisions, skill installation integrity, validation evidence reporting, and recurring maintainer cadence.
+- Baseline examples for PR review, issue triage, CI failure diagnosis, release readiness, dependency upgrades, security advisory triage, context budget management, OpenAI docs answers, web extraction boundaries, MCP vs skill boundary decisions, skill installation integrity, validation evidence reporting, recurring maintainer cadence, and public issue follow-up drafting.
 - GitHub Actions validation for repository structure, surfaced by a README badge.
 - Issue templates for eval cases and skill upgrades.
 - A lightweight scoring rubric for consistent human-reviewed eval reports.
@@ -18,17 +18,18 @@ This tracker keeps `agent-evals-cn` honest as an open-source project. The goal i
 - Validation now checks the eval report template for required summary, failure-pattern, result, risk, follow-up, and rubric fields.
 - Post-`v0.1.0` tag audit documents which readiness work landed after the first public tag.
 - The `v0.1.1` patch tag packages the already-landed eval hardening without moving the older `v0.1.0` tag.
+- A replayable eval report corpus has started with [`2026-07-22-oss-maintainer-cadence.md`](eval-reports/2026-07-22-oss-maintainer-cadence.md), including prompt, scoring, and disagreement notes.
 
 ## Current gaps
 
 - More real-world eval cases are needed, especially cases replayed from failed runs.
-- Eval results are still manually judged; `docs/scoring-rubric.md`, `docs/scoring-calibration.md`, and `docs/human-eval-review-runbook.md` reduce variance but do not replace reviewer judgment.
+- Eval results are still manually judged; `docs/scoring-rubric.md`, `docs/scoring-calibration.md`, `docs/human-eval-review-runbook.md`, and the first replayable report reduce variance but do not replace reviewer judgment.
 - No external issues or PRs yet.
 - The public `v0.1.0` tag exists, but it points to the first application-materials baseline before later eval hardening.
 
 ## Near-term checklist
 
-- [x] Add 10 baseline eval cases. Current: 13.
+- [x] Add 10 baseline eval cases. Current: 14.
 - [x] Add `CHANGELOG.md`.
 - [x] Add a baseline scoring rubric for human-reviewed reports.
 - [x] Add a human review runbook for repeatable manual eval scoring.
@@ -38,6 +39,7 @@ This tracker keeps `agent-evals-cn` honest as an open-source project. The goal i
 - [x] Validate baseline eval case structure, not only the core skill file.
 - [x] Add a baseline eval case index and validate that every case is listed.
 - [x] Validate the eval report template used for public release evidence.
+- [x] Add the first replayable eval report with prompt, scores, and disagreement notes.
 - [x] Publish `v0.1.0`.
 - [x] Prepare a follow-up patch tag checklist for the current hardened baseline.
 - [x] Tag `v0.1.1` after final validation on current `main`.
