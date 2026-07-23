@@ -9,6 +9,8 @@ ROOT = Path(__file__).resolve().parents[1]
 SKILL = ROOT / "skills" / "agent-evals-cn" / "SKILL.md"
 EXAMPLES = ROOT / "examples"
 CASE_INDEX = ROOT / "docs" / "eval-case-index.md"
+REPORT_INDEX = ROOT / "docs" / "eval-report-index.md"
+REPORTS = ROOT / "docs" / "eval-reports"
 REPORT_TEMPLATE = EXAMPLES / "eval-report-template.md"
 MARKDOWN_LINK_RE = re.compile(r"!?\[[^\]]*\]\(([^)]+)\)")
 REQUIRED = [
@@ -36,6 +38,19 @@ REPORT_REQUIRED = [
     "## 回归风险",
     "## 下一轮新增 eval",
     "correctness / usefulness / safety / brevity",
+]
+REPLAYABLE_REPORT_REQUIRED = [
+    "Target:",
+    "Version / commit:",
+    "## Replayable input",
+    "## Replay setup",
+    "## Summary",
+    "## Main failure patterns",
+    "## Detailed results",
+    "## Disagreement notes",
+    "## Recommended upgrade",
+    "## Regression risks",
+    "## Next eval to add",
 ]
 
 
@@ -101,6 +116,30 @@ def validate_report_template() -> list[str]:
     ]
 
 
+def validate_eval_reports() -> list[str]:
+    errors: list[str] = []
+
+    report_paths = sorted(REPORTS.glob("*.md"))
+    if not report_paths:
+        return [f"{REPORTS.relative_to(ROOT)}: no replayable eval reports found"]
+
+    if not REPORT_INDEX.exists():
+        return [f"{REPORT_INDEX.relative_to(ROOT)}: missing eval report index"]
+
+    index_text = REPORT_INDEX.read_text(encoding="utf-8")
+    for path in report_paths:
+        rel_path = path.relative_to(ROOT).as_posix()
+        if rel_path not in index_text:
+            errors.append(f"{REPORT_INDEX.relative_to(ROOT)}: missing {rel_path}")
+
+        text = path.read_text(encoding="utf-8")
+        for item in REPLAYABLE_REPORT_REQUIRED:
+            if item not in text:
+                errors.append(f"{rel_path}: missing {item}")
+
+    return errors
+
+
 def validate_markdown_links() -> list[str]:
     errors: list[str] = []
     for md_path in sorted(ROOT.rglob("*.md")):
@@ -162,6 +201,13 @@ def main() -> int:
     if report_errors:
         print("Validation failed:")
         for error in report_errors:
+            print(f"- {error}")
+        return 1
+
+    replayable_report_errors = validate_eval_reports()
+    if replayable_report_errors:
+        print("Validation failed:")
+        for error in replayable_report_errors:
             print(f"- {error}")
         return 1
 
