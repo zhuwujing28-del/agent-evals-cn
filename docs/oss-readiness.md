@@ -12,6 +12,7 @@ This tracker keeps `agent-evals-cn` honest as an open-source project. The goal i
 - A lightweight scoring rubric for consistent human-reviewed eval reports.
 - A human eval review runbook for repeatable manual scoring and release spot checks.
 - Scoring calibration notes reduce reviewer drift for release and public application evidence.
+- The eval report review issue template gives external contributors a structured path for submitting replayable manual-scoring evidence.
 - Validation now checks baseline eval case IDs and required sections, reducing silent placeholder drift.
 - A baseline eval case index maps every case to the capability and failure mode it covers.
 - Latest public issue triage: [public-issue-triage-2026-07-20.md](public-issue-triage-2026-07-20.md).
@@ -25,6 +26,7 @@ This tracker keeps `agent-evals-cn` honest as an open-source project. The goal i
 
 - More real-world eval cases are needed, especially cases replayed from failed runs.
 - Eval results are still manually judged; `docs/scoring-rubric.md`, `docs/scoring-calibration.md`, `docs/human-eval-review-runbook.md`, and the first replayable report reduce variance but do not replace reviewer judgment.
+- External replay reports still need maintainer review, but the new issue template makes the evidence requirements explicit before a report is accepted.
 - No external issues or PRs yet.
 - The public `v0.1.0` tag exists, but it points to the first application-materials baseline before later eval hardening.
 

@@ -22,7 +22,7 @@ open-source readiness.
 | Issue | Topic | Evidence on `main` | Suggested action |
 | --- | --- | --- | --- |
 | #1 | Expand baseline eval cases to 10+ | [`eval-case-index.md`](eval-case-index.md) lists 13 baseline cases and `scripts/validate.py` checks that every case is indexed. | Close as completed after posting the index link and current case count. |
-| #2 | Evals are still manually judged | [`scoring-rubric.md`](scoring-rubric.md), [`scoring-calibration.md`](scoring-calibration.md), and [`human-eval-review-runbook.md`](human-eval-review-runbook.md) reduce reviewer drift, but manual judgment remains an honest limitation. | Keep open as a known limitation until at least one repeatable report corpus or automation path exists. |
+| #2 | Evals are still manually judged | [`scoring-rubric.md`](scoring-rubric.md), [`scoring-calibration.md`](scoring-calibration.md), [`human-eval-review-runbook.md`](human-eval-review-runbook.md), [`eval-report-index.md`](eval-report-index.md), and [`.github/ISSUE_TEMPLATE/eval_report_review.md`](../.github/ISSUE_TEMPLATE/eval_report_review.md) reduce reviewer drift and make external report evidence easier to audit, but manual judgment remains an honest limitation. | Keep open as a known limitation until there is a reliable semi-automated comparison path or enough replayed reports to justify narrowing the limitation. |
 
 ## Suggested maintainer replies
 
@@ -35,7 +35,7 @@ open-source readiness.
 ### Manual judging limitation issue (#2)
 
 ```text
-这个限制仍然存在，但 main 已经补充了 docs/scoring-rubric.md、docs/scoring-calibration.md 和 docs/human-eval-review-runbook.md，用来降低人工评分漂移。建议保留该 issue，后续用真实报告样本或可重复的半自动检查来逐步收敛，而不是现在宣称已经自动化解决。
+这个限制仍然存在，但 main 已经补充了 docs/scoring-rubric.md、docs/scoring-calibration.md、docs/human-eval-review-runbook.md、docs/eval-report-index.md 和 eval report review issue template，用来降低人工评分漂移并规范外部报告证据。建议保留该 issue，后续用更多真实报告样本或可重复的半自动检查来逐步收敛，而不是现在宣称已经自动化解决。
 ```
 
 ## Next maintenance focus
