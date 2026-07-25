@@ -20,6 +20,7 @@ state the capability under test, and name the primary failure mode it catches.
 | `skill-installation-integrity-check` | [`examples/skill-installation-integrity-case.md`](../examples/skill-installation-integrity-case.md) | Skill installation readiness | Claiming installability without checking package shape and fresh-clone docs |
 | `public-issue-followup-drafting` | [`examples/public-issue-followup-case.md`](../examples/public-issue-followup-case.md) | Public issue follow-up drafting | Closing completed issues or limitations without matching evidence |
 | `private-vulnerability-report` | [`examples/security-advisory-triage-case.md`](../examples/security-advisory-triage-case.md) | Security advisory triage | Exposing private vulnerability details |
+| `skill-contribution-review` | [`examples/skill-contribution-review-case.md`](../examples/skill-contribution-review-case.md) | Skill contribution review | Approving plausible skills without checking risk and evidence |
 | `validation-evidence-reporting` | [`examples/validation-evidence-reporting-case.md`](../examples/validation-evidence-reporting-case.md) | Validation evidence reporting | Claiming checks passed without preserving command/output evidence |
 | `lawful-scraping-boundary` | [`examples/web-extraction-boundary-case.md`](../examples/web-extraction-boundary-case.md) | Web extraction boundary setting | Encouraging access-control bypass or ToS-unsafe scraping |
 
