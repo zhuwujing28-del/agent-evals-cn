@@ -12,6 +12,7 @@ CASE_INDEX = ROOT / "docs" / "eval-case-index.md"
 REPORT_INDEX = ROOT / "docs" / "eval-report-index.md"
 REPORTS = ROOT / "docs" / "eval-reports"
 REPORT_TEMPLATE = EXAMPLES / "eval-report-template.md"
+REPORT_REVIEW_TEMPLATE = ROOT / ".github" / "ISSUE_TEMPLATE" / "eval_report_review.md"
 MARKDOWN_LINK_RE = re.compile(r"!?\[[^\]]*\]\(([^)]+)\)")
 REQUIRED = [
     "name: agent-evals-cn",
@@ -38,6 +39,21 @@ REPORT_REQUIRED = [
     "## 回归风险",
     "## 下一轮新增 eval",
     "correctness / usefulness / safety / brevity",
+]
+REPORT_REVIEW_REQUIRED = [
+    "labels: eval-report",
+    "##",
+    "case-id",
+    "commit",
+    "docs/scoring-rubric.md",
+    "docs/scoring-calibration.md",
+    "correctness",
+    "usefulness",
+    "safety",
+    "brevity",
+    "pass",
+    "partial",
+    "fail",
 ]
 REPLAYABLE_REPORT_REQUIRED = [
     "Target:",
@@ -112,6 +128,19 @@ def validate_report_template() -> list[str]:
     return [
         f"{rel_path}: missing {item}"
         for item in REPORT_REQUIRED
+        if item not in text
+    ]
+
+
+def validate_report_review_template() -> list[str]:
+    if not REPORT_REVIEW_TEMPLATE.exists():
+        return [f"{REPORT_REVIEW_TEMPLATE.relative_to(ROOT)}: missing eval report review issue template"]
+
+    text = REPORT_REVIEW_TEMPLATE.read_text(encoding="utf-8")
+    rel_path = REPORT_REVIEW_TEMPLATE.relative_to(ROOT)
+    return [
+        f"{rel_path}: missing {item}"
+        for item in REPORT_REVIEW_REQUIRED
         if item not in text
     ]
 
@@ -201,6 +230,13 @@ def main() -> int:
     if report_errors:
         print("Validation failed:")
         for error in report_errors:
+            print(f"- {error}")
+        return 1
+
+    report_review_errors = validate_report_review_template()
+    if report_review_errors:
+        print("Validation failed:")
+        for error in report_review_errors:
             print(f"- {error}")
         return 1
 

@@ -21,6 +21,7 @@ This tracker keeps `agent-evals-cn` honest as an open-source project. The goal i
 - The `v0.1.1` patch tag packages the already-landed eval hardening without moving the older `v0.1.0` tag.
 - A replayable eval report corpus has started with [`2026-07-22-oss-maintainer-cadence.md`](eval-reports/2026-07-22-oss-maintainer-cadence.md), including prompt, scoring, and disagreement notes.
 - A replayable eval report index now maps each published report to the case and evidence it contributes.
+- Validation now checks the public eval report review issue template for case ID, version, rubric, calibration, scoring dimensions, and result labels.
 
 ## Current gaps
 
@@ -44,6 +45,7 @@ This tracker keeps `agent-evals-cn` honest as an open-source project. The goal i
 - [x] Validate the eval report template used for public release evidence.
 - [x] Add the first replayable eval report with prompt, scores, and disagreement notes.
 - [x] Index replayable eval reports and validate their core replay/evidence sections.
+- [x] Validate the public eval report review issue template before accepting external replay evidence.
 - [x] Publish `v0.1.0`.
 - [x] Prepare a follow-up patch tag checklist for the current hardened baseline.
 - [x] Tag `v0.1.1` after final validation on current `main`.

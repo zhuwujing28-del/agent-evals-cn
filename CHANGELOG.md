@@ -8,6 +8,7 @@ This project follows a lightweight 0.x release process while the eval method, te
 
 ### Added
 
+- Added validation for the eval report review issue template so external replay submissions keep case IDs, version evidence, rubric links, scoring dimensions, and pass/partial/fail decisions.
 - Added an eval report review issue template for external replayable manual-scoring evidence.
 - Added a replayable eval report corpus starter for the recurring OSS maintainer cadence case.
 - Added an eval report index and validation for replayable report sections so public evidence stays rerunnable and auditable.
