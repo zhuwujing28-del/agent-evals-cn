@@ -9,6 +9,7 @@ This tracker keeps `agent-evals-cn` honest as an open-source project. The goal i
 - Baseline examples for PR review, issue triage, CI failure diagnosis, release readiness, dependency upgrades, security advisory triage, context budget management, OpenAI docs answers, web extraction boundaries, MCP vs skill boundary decisions, skill installation integrity, validation evidence reporting, recurring maintainer cadence, public issue follow-up drafting, and skill contribution review.
 - GitHub Actions validation for repository structure, surfaced by a README badge.
 - Issue templates for eval cases and skill upgrades.
+- A repository `CODEOWNERS` entry assigns public contributions to the maintainer for review.
 - A lightweight scoring rubric for consistent human-reviewed eval reports.
 - A human eval review runbook for repeatable manual scoring and release spot checks.
 - Scoring calibration notes reduce reviewer drift for release and public application evidence.
