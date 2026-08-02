@@ -25,6 +25,7 @@
 | `examples/release-readiness-case.md` | skill 仓库发布准备 eval case |
 | `docs/maintenance.md` | 维护和升级流程 |
 | `docs/oss-readiness.md` | 开源维护和申请准备度追踪 |
+| `docs/replay-submission-checklist.md` | 外部 replay 报告提交前的脱敏、评分和证据检查 |
 | `docs/usage-reports/` | 真实使用记录和跨仓库评测报告 |
 | `scripts/validate.py` | 基础结构校验 |
 | `APPLICATION.md` | Codex for Open Source 申请说明 |

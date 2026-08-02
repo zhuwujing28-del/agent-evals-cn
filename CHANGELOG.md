@@ -8,6 +8,7 @@ This project follows a lightweight 0.x release process while the eval method, te
 
 ### Added
 
+- Added a replay submission checklist that makes external eval evidence easier to sanitize, reproduce, and review.
 - Added a skill contribution review eval case for maintainer PR decisions that must check risk, docs, and validation evidence before merge.
 - Added validation for the eval report review issue template so external replay submissions keep case IDs, version evidence, rubric links, scoring dimensions, and pass/partial/fail decisions.
 - Added an eval report review issue template for external replayable manual-scoring evidence.
