@@ -7,6 +7,7 @@ checking release readiness, reviewer consistency, or OSS application evidence.
 
 | Date | Report | Primary case | What it proves |
 | --- | --- | --- | --- |
+| 2026-08-08 | [`docs/eval-reports/2026-08-08-public-issue-followup.md`](eval-reports/2026-08-08-public-issue-followup.md) | `public-issue-followup-drafting` | Maintainer follow-up can close completed baseline-expansion work while keeping the manual-judging limitation open with evidence. |
 | 2026-07-22 | [`docs/eval-reports/2026-07-22-oss-maintainer-cadence.md`](eval-reports/2026-07-22-oss-maintainer-cadence.md) | `oss-maintainer-cadence-check` | The recurring OSS-maintainer automation inspects local/public state first, prefers no-op over filler, and records validation/push evidence separately. |
 
 ## Maintenance rule

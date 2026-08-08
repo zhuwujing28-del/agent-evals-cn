@@ -8,6 +8,7 @@ This project follows a lightweight 0.x release process while the eval method, te
 
 ### Added
 
+- Added an automation memory continuity eval case for recurring OSS maintenance runs that must read prior memory, inspect public state, and avoid duplicate commits.
 - Added a dated cross-repo OSS readiness usage report that records public GitHub state, open issue follow-ups, and next application-focused actions.
 - Added a repository `CODEOWNERS` entry so public eval, documentation, and validation changes have an explicit maintainer review owner.
 - Added a replay submission checklist that makes external eval evidence easier to sanitize, reproduce, and review.

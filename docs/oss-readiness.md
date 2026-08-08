@@ -21,6 +21,7 @@ This tracker keeps `agent-evals-cn` honest as an open-source project. The goal i
 - Post-`v0.1.0` tag audit documents which readiness work landed after the first public tag.
 - The `v0.1.1` patch tag packages the already-landed eval hardening without moving the older `v0.1.0` tag.
 - A replayable eval report corpus has started with [`2026-07-22-oss-maintainer-cadence.md`](eval-reports/2026-07-22-oss-maintainer-cadence.md), including prompt, scoring, and disagreement notes.
+- A second replayable report, [`2026-08-08-public-issue-followup.md`](eval-reports/2026-08-08-public-issue-followup.md), checks public issue close/keep-open decisions against repository evidence.
 - A replayable eval report index now maps each published report to the case and evidence it contributes.
 - Validation now checks the public eval report review issue template for case ID, version, rubric, calibration, scoring dimensions, and result labels.
 
