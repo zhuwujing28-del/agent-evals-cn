@@ -8,6 +8,7 @@ This project follows a lightweight 0.x release process while the eval method, te
 
 ### Added
 
+- Added a manual-scoring calibration eval report that records reviewer disagreement and keeps the manual-judging limitation auditable.
 - Added a minimal bug reproduction eval case that pairs with `codex-skills-cn` `bug-reproduction-cn` and checks evidence-based repro planning before confirming regressions.
 - Added an automation memory continuity eval case for recurring OSS maintenance runs that must read prior memory, inspect public state, and avoid duplicate commits.
 - Added a dated cross-repo OSS readiness usage report that records public GitHub state, open issue follow-ups, and next application-focused actions.
