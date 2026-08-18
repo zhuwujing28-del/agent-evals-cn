@@ -35,7 +35,7 @@ This tracker keeps `agent-evals-cn` honest as an open-source project. The goal i
 
 ## Near-term checklist
 
-- [x] Add 10 baseline eval cases. Current: 18.
+- [x] Add 10 baseline eval cases. Current: 19.
 - [x] Add `CHANGELOG.md`.
 - [x] Add a baseline scoring rubric for human-reviewed reports.
 - [x] Add a human review runbook for repeatable manual eval scoring.

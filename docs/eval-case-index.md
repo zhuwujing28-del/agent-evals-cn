@@ -17,6 +17,7 @@ state the capability under test, and name the primary failure mode it catches.
 | `latest-model-choice` | [`examples/openai-docs-case.md`](../examples/openai-docs-case.md) | Current OpenAI docs answers | Answering from stale memory instead of official docs |
 | `stale-state-update` | [`examples/pr-review-case.md`](../examples/pr-review-case.md) | PR review | Missing a user-visible stale state regression |
 | `skill-repo-pre-release-check` | [`examples/release-readiness-case.md`](../examples/release-readiness-case.md) | Release readiness review | Tagging without validation or scoped release notes |
+| `release-notes-from-maintainer-diff` | [`examples/release-notes-evidence-case.md`](../examples/release-notes-evidence-case.md) | Release notes drafting | Turning sparse commit evidence into hype, unverifiable claims, or reader-hostile notes |
 | `skill-installation-integrity-check` | [`examples/skill-installation-integrity-case.md`](../examples/skill-installation-integrity-case.md) | Skill installation readiness | Claiming installability without checking package shape and fresh-clone docs |
 | `recurring-automation-memory-continuity` | [`examples/automation-memory-continuity-case.md`](../examples/automation-memory-continuity-case.md) | Recurring automation memory continuity | Repeating prior work or committing without reading automation memory |
 | `vague-bug-report-minimal-repro` | [`examples/bug-reproduction-minimal-case.md`](../examples/bug-reproduction-minimal-case.md) | Minimal bug reproduction planning | Confirming a regression without repro evidence |
