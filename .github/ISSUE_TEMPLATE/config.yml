@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Eval documentation
+    url: https://github.com/zhuwujing28-del/agent-evals-cn
+    about: Open a discussion in the repo if the issue template does not fit.
