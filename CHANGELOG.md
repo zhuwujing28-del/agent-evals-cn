@@ -8,6 +8,7 @@ This project follows a lightweight 0.x release process while the eval method, te
 
 ### Added
 
+- Added least-privilege read-only permissions to the GitHub Actions validation workflow.
 - Added a GitHub issue template config that disables blank issues and points maintainers to the eval docs path.
 - Redirected the issue template config link to the replay submission checklist instead of the repo root.
 - Added a release-notes evidence eval case that checks commit-grounded Chinese release notes, validation status, and claim boundaries.
