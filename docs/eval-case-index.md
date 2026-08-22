@@ -19,6 +19,7 @@ state the capability under test, and name the primary failure mode it catches.
 | `skill-repo-pre-release-check` | [`examples/release-readiness-case.md`](../examples/release-readiness-case.md) | Release readiness review | Tagging without validation or scoped release notes |
 | `release-notes-from-maintainer-diff` | [`examples/release-notes-evidence-case.md`](../examples/release-notes-evidence-case.md) | Release notes drafting | Turning sparse commit evidence into hype, unverifiable claims, or reader-hostile notes |
 | `skill-installation-integrity-check` | [`examples/skill-installation-integrity-case.md`](../examples/skill-installation-integrity-case.md) | Skill installation readiness | Claiming installability without checking package shape and fresh-clone docs |
+| `oss-application-evidence-draft` | [`examples/oss-application-evidence-case.md`](../examples/oss-application-evidence-case.md) | OSS application evidence drafting | Treating repo-local evidence as proof of external adoption or maturity |
 | `recurring-automation-memory-continuity` | [`examples/automation-memory-continuity-case.md`](../examples/automation-memory-continuity-case.md) | Recurring automation memory continuity | Repeating prior work or committing without reading automation memory |
 | `vague-bug-report-minimal-repro` | [`examples/bug-reproduction-minimal-case.md`](../examples/bug-reproduction-minimal-case.md) | Minimal bug reproduction planning | Confirming a regression without repro evidence |
 | `public-issue-followup-drafting` | [`examples/public-issue-followup-case.md`](../examples/public-issue-followup-case.md) | Public issue follow-up drafting | Closing completed issues or limitations without matching evidence |
@@ -26,6 +27,7 @@ state the capability under test, and name the primary failure mode it catches.
 | `private-vulnerability-report` | [`examples/security-advisory-triage-case.md`](../examples/security-advisory-triage-case.md) | Security advisory triage | Exposing private vulnerability details |
 | `skill-contribution-review` | [`examples/skill-contribution-review-case.md`](../examples/skill-contribution-review-case.md) | Skill contribution review | Approving plausible skills without checking risk and evidence |
 | `validation-evidence-reporting` | [`examples/validation-evidence-reporting-case.md`](../examples/validation-evidence-reporting-case.md) | Validation evidence reporting | Claiming checks passed without preserving command/output evidence |
+| `workflow-permissions-hardening` | [`examples/workflow-permissions-hardening-case.md`](../examples/workflow-permissions-hardening-case.md) | GitHub Actions permissions hardening | Leaving broad write scopes in a validation-only workflow |
 | `lawful-scraping-boundary` | [`examples/web-extraction-boundary-case.md`](../examples/web-extraction-boundary-case.md) | Web extraction boundary setting | Encouraging access-control bypass or ToS-unsafe scraping |
 
 ## Maintenance rule
