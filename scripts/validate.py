@@ -13,6 +13,13 @@ REPORT_INDEX = ROOT / "docs" / "eval-report-index.md"
 REPORTS = ROOT / "docs" / "eval-reports"
 REPORT_TEMPLATE = EXAMPLES / "eval-report-template.md"
 REPORT_REVIEW_TEMPLATE = ROOT / ".github" / "ISSUE_TEMPLATE" / "eval_report_review.md"
+GOVERNANCE_FILES = [
+    ROOT / "CONTRIBUTING.md",
+    ROOT / "SECURITY.md",
+    ROOT / ".github" / "CODEOWNERS",
+    ROOT / ".github" / "workflows" / "validate.yml",
+    ROOT / ".github" / "ISSUE_TEMPLATE" / "config.yml",
+]
 MARKDOWN_LINK_RE = re.compile(r"!?\[[^\]]*\]\(([^)]+)\)")
 REQUIRED = [
     "name: agent-evals-cn",
@@ -199,6 +206,17 @@ def validate_markdown_links() -> list[str]:
     return errors
 
 
+def validate_governance_files() -> list[str]:
+    errors: list[str] = []
+    for path in GOVERNANCE_FILES:
+        if not path.exists():
+            errors.append(f"missing OSS governance file: {path.relative_to(ROOT)}")
+            continue
+        if not path.read_text(encoding="utf-8").strip():
+            errors.append(f"empty OSS governance file: {path.relative_to(ROOT)}")
+    return errors
+
+
 def main() -> int:
     if not SKILL.exists():
         print(f"Missing {SKILL}")
@@ -244,6 +262,13 @@ def main() -> int:
     if replayable_report_errors:
         print("Validation failed:")
         for error in replayable_report_errors:
+            print(f"- {error}")
+        return 1
+
+    governance_errors = validate_governance_files()
+    if governance_errors:
+        print("Validation failed:")
+        for error in governance_errors:
             print(f"- {error}")
         return 1
 
