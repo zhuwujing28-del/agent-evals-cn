@@ -123,6 +123,11 @@ def validate_eval_case_index() -> list[str]:
         if rel_path not in index_text:
             errors.append(f"{CASE_INDEX.relative_to(ROOT)}: missing {rel_path}")
 
+    indexed_paths = set(re.findall(r"\]\((examples/[^)#]+-case\.md)(?:#[^)]*)?\)", index_text))
+    known_paths = {path.relative_to(ROOT).as_posix() for path in case_paths}
+    for rel_path in sorted(indexed_paths - known_paths):
+        errors.append(f"{CASE_INDEX.relative_to(ROOT)}: stale case link {rel_path}")
+
     return errors
 
 
