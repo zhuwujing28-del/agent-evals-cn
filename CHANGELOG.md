@@ -8,6 +8,7 @@ This project follows a lightweight 0.x release process while the eval method, te
 
 ### Added
 
+- Refreshed the application summary to match the current 22-case baseline eval index.
 - Added a maintainer usage report intake eval case for scoped, privacy-preserving follow-up on public OSS usage feedback.
 - Extended eval case index validation to catch stale links as well as missing case entries.
 - Extended structure validation to require non-empty OSS governance files, including contribution, security, ownership, issue-template, and CI entry points.
