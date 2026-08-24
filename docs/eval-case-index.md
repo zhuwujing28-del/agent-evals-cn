@@ -29,6 +29,7 @@ state the capability under test, and name the primary failure mode it catches.
 | `validation-evidence-reporting` | [`examples/validation-evidence-reporting-case.md`](../examples/validation-evidence-reporting-case.md) | Validation evidence reporting | Claiming checks passed without preserving command/output evidence |
 | `workflow-permissions-hardening` | [`examples/workflow-permissions-hardening-case.md`](../examples/workflow-permissions-hardening-case.md) | GitHub Actions permissions hardening | Leaving broad write scopes in a validation-only workflow |
 | `lawful-scraping-boundary` | [`examples/web-extraction-boundary-case.md`](../examples/web-extraction-boundary-case.md) | Web extraction boundary setting | Encouraging access-control bypass or ToS-unsafe scraping |
+| `maintainer-usage-report-intake` | [`examples/maintainer-usage-report-intake-case.md`](../examples/maintainer-usage-report-intake-case.md) | Maintainer usage report intake | Treating a single sanitized report as broad adoption proof or requesting private evidence |
 
 ## Maintenance rule
 
