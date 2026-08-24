@@ -16,6 +16,7 @@ This tracker keeps `agent-evals-cn` honest as an open-source project. The goal i
 - The eval report review issue template gives external contributors a structured path for submitting replayable manual-scoring evidence.
 - Validation now checks baseline eval case IDs and required sections, reducing silent placeholder drift.
 - A baseline eval case index maps every case to the capability and failure mode it covers.
+- A coverage map groups the baseline cases by maintainer workflow and calls out where replay data is still thin.
 - Latest public issue triage: [public-issue-triage-2026-07-20.md](public-issue-triage-2026-07-20.md).
 - Validation now checks the eval report template for required summary, failure-pattern, result, risk, follow-up, and rubric fields.
 - Post-`v0.1.0` tag audit documents which readiness work landed after the first public tag.
@@ -27,7 +28,7 @@ This tracker keeps `agent-evals-cn` honest as an open-source project. The goal i
 
 ## Current gaps
 
-- More real-world eval cases are needed, especially cases replayed from failed runs.
+- More replayed failure cases from live maintainer work are needed.
 - Eval results are still manually judged; `docs/scoring-rubric.md`, `docs/scoring-calibration.md`, `docs/human-eval-review-runbook.md`, and the first replayable report reduce variance but do not replace reviewer judgment.
 - External replay reports still need maintainer review, but the new issue template makes the evidence requirements explicit before a report is accepted.
 - No external issues or PRs yet.
