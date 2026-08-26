@@ -8,6 +8,7 @@ This project follows a lightweight 0.x release process while the eval method, te
 
 ### Added
 
+- Added a maintainer usage-report intake replayable report that keeps single-report evidence from turning into broad adoption claims.
 - Added validation for application and readiness baseline eval counts so inventory drift fails locally.
 - Added an eval coverage map that groups baseline cases by maintainer workflow and highlights thin replay evidence.
 - Refreshed the application summary to match the current 22-case baseline eval index.
