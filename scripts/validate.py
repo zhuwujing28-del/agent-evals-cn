@@ -9,6 +9,8 @@ ROOT = Path(__file__).resolve().parents[1]
 SKILL = ROOT / "skills" / "agent-evals-cn" / "SKILL.md"
 EXAMPLES = ROOT / "examples"
 CASE_INDEX = ROOT / "docs" / "eval-case-index.md"
+APPLICATION = ROOT / "APPLICATION.md"
+OSS_READINESS = ROOT / "docs" / "oss-readiness.md"
 REPORT_INDEX = ROOT / "docs" / "eval-report-index.md"
 REPORTS = ROOT / "docs" / "eval-reports"
 REPORT_TEMPLATE = EXAMPLES / "eval-report-template.md"
@@ -131,6 +133,28 @@ def validate_eval_case_index() -> list[str]:
     return errors
 
 
+def validate_baseline_count_docs() -> list[str]:
+    errors: list[str] = []
+    case_count = len(list(EXAMPLES.glob("*-case.md")))
+    checks = [
+        (APPLICATION, f"{case_count} baseline eval cases"),
+        (OSS_READINESS, f"Current: {case_count}."),
+    ]
+
+    for path, expected in checks:
+        if not path.exists():
+            errors.append(f"{path.relative_to(ROOT)}: missing baseline count doc")
+            continue
+
+        text = path.read_text(encoding="utf-8")
+        if expected not in text:
+            errors.append(
+                f"{path.relative_to(ROOT)}: expected baseline count marker {expected!r}"
+            )
+
+    return errors
+
+
 def validate_report_template() -> list[str]:
     if not REPORT_TEMPLATE.exists():
         return [f"{REPORT_TEMPLATE.relative_to(ROOT)}: missing eval report template"]
@@ -246,6 +270,13 @@ def main() -> int:
     if index_errors:
         print("Validation failed:")
         for error in index_errors:
+            print(f"- {error}")
+        return 1
+
+    baseline_count_errors = validate_baseline_count_docs()
+    if baseline_count_errors:
+        print("Validation failed:")
+        for error in baseline_count_errors:
             print(f"- {error}")
         return 1
 
