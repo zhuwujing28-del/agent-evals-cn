@@ -202,6 +202,13 @@ def validate_eval_reports() -> list[str]:
             if item not in text:
                 errors.append(f"{rel_path}: missing {item}")
 
+    indexed_paths = set(
+        re.findall(r"\]\((eval-reports/[^)#]+\.md)(?:#[^)]*)?\)", index_text)
+    )
+    known_paths = {path.relative_to(REPORT_INDEX.parent).as_posix() for path in report_paths}
+    for rel_path in sorted(indexed_paths - known_paths):
+        errors.append(f"{REPORT_INDEX.relative_to(ROOT)}: stale report link {rel_path}")
+
     return errors
 
 
