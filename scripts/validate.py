@@ -11,6 +11,7 @@ EXAMPLES = ROOT / "examples"
 CASE_INDEX = ROOT / "docs" / "eval-case-index.md"
 APPLICATION = ROOT / "APPLICATION.md"
 OSS_READINESS = ROOT / "docs" / "oss-readiness.md"
+COVERAGE_MAP = ROOT / "docs" / "eval-coverage-map.md"
 REPORT_INDEX = ROOT / "docs" / "eval-report-index.md"
 REPORTS = ROOT / "docs" / "eval-reports"
 REPORT_TEMPLATE = EXAMPLES / "eval-report-template.md"
@@ -155,6 +156,18 @@ def validate_baseline_count_docs() -> list[str]:
     return errors
 
 
+def validate_eval_coverage_map(case_ids: set[str]) -> list[str]:
+    if not COVERAGE_MAP.exists():
+        return [f"{COVERAGE_MAP.relative_to(ROOT)}: missing eval coverage map"]
+
+    text = COVERAGE_MAP.read_text(encoding="utf-8")
+    referenced_ids = set(re.findall(r"`([a-z0-9-]+)`", text))
+    return [
+        f"{COVERAGE_MAP.relative_to(ROOT)}: stale case ID {case_id}"
+        for case_id in sorted(referenced_ids - case_ids)
+    ]
+
+
 def validate_report_template() -> list[str]:
     if not REPORT_TEMPLATE.exists():
         return [f"{REPORT_TEMPLATE.relative_to(ROOT)}: missing eval report template"]
@@ -270,6 +283,19 @@ def main() -> int:
     if case_errors:
         print("Validation failed:")
         for error in case_errors:
+            print(f"- {error}")
+        return 1
+
+    case_ids = {
+        line.removeprefix("## case-id:").strip()
+        for path in sorted(EXAMPLES.glob("*-case.md"))
+        for line in path.read_text(encoding="utf-8").splitlines()
+        if line.startswith("## case-id:")
+    }
+    coverage_errors = validate_eval_coverage_map(case_ids)
+    if coverage_errors:
+        print("Validation failed:")
+        for error in coverage_errors:
             print(f"- {error}")
         return 1
 

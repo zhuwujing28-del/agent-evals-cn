@@ -15,6 +15,7 @@ This tracker keeps `agent-evals-cn` honest as an open-source project. The goal i
 - Scoring calibration notes reduce reviewer drift for release and public application evidence.
 - The eval report review issue template gives external contributors a structured path for submitting replayable manual-scoring evidence.
 - Validation now checks baseline eval case IDs and required sections, reducing silent placeholder drift.
+- Validation now rejects stale case IDs in the representative coverage map.
 - A baseline eval case index maps every case to the capability and failure mode it covers.
 - A coverage map groups the baseline cases by maintainer workflow and calls out where replay data is still thin.
 - Latest public issue triage: [public-issue-triage-2026-07-20.md](public-issue-triage-2026-07-20.md).
