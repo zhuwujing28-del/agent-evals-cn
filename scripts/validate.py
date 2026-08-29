@@ -263,6 +263,12 @@ def validate_governance_files() -> list[str]:
             continue
         if not path.read_text(encoding="utf-8").strip():
             errors.append(f"empty OSS governance file: {path.relative_to(ROOT)}")
+
+    contributing = ROOT / "CONTRIBUTING.md"
+    if contributing.exists():
+        text = contributing.read_text(encoding="utf-8")
+        if "python .\\scripts\\validate.py" not in text:
+            errors.append("CONTRIBUTING.md: missing documented python .\\scripts\\validate.py command")
     return errors
 
 

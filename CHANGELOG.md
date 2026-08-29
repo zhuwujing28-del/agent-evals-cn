@@ -8,6 +8,7 @@ This project follows a lightweight 0.x release process while the eval method, te
 
 ### Added
 
+- Added a governance validation guard that keeps the contributor guide's required validation command documented.
 - Added validation that case IDs in the representative coverage map still exist.
 - Extended eval report validation to catch stale report-index links after replay files are renamed or removed.
 - Added a maintainer usage-report intake replayable report that keeps single-report evidence from turning into broad adoption claims.
