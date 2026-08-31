@@ -81,11 +81,26 @@ Copy-Item -Recurse .\skills\agent-evals-cn $HOME\.codex\skills\
 
 ## 路线图
 
-- 建立一组稳定的中文 baseline evals。
-- 增加 GitHub Action，自动校验 skill 结构。
-- 增加更多 eval case 示例：PR review、issue triage、CI 失败诊断、OpenAI API 问答、网页提取。
-- 增加 JSON/Markdown 双格式评测报告。
-- 增加 changelog 和版本升级记录。
+### 已完成
+
+- 已建立 22 个中文 baseline eval cases，并用 case index 和 coverage map 维护覆盖范围。
+- 已加入 GitHub Actions、结构校验、治理文件检查和本地 Markdown 链接检查。
+- 已覆盖 PR review、issue triage、CI 失败诊断、发布准备、OpenAI 文档、网页提取、
+  MCP 边界、安装完整性和 OSS 申请证据等场景。
+- 已提供 Markdown 评测报告模板、评分 rubric、校准说明、人工复核 runbook 和 replay 报告索引。
+- 已加入 changelog、版本升级记录及 `v0.1.1` 发布准备文档。
+
+### 近期
+
+- 收集更多可公开、可脱敏、可复现的失败 replay 报告。
+- 根据真实维护反馈补充回归 case，并记录评分分歧和后续修复。
+- 持续检查 case index、coverage map、报告索引和申请材料之间的一致性。
+
+### 中长期
+
+- 在保持人工复核可审计的前提下，探索 JSON/Markdown 双格式报告。
+- 建立跨 skill、prompt 和 agent workflow 的长期回归基线。
+- 沉淀有公开证据支撑的中文 Agent/Codex 评测最佳实践。
 
 ## License
 
