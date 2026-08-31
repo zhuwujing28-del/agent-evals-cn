@@ -8,6 +8,7 @@ This project follows a lightweight 0.x release process while the eval method, te
 
 ### Added
 
+- Added a dated cross-repo public issue follow-up that maps completed requests and remaining evidence gaps to current docs, examples, and validation proof.
 - Updated the README roadmap to reflect the current 22-case baseline, replay corpus, and evidence-focused next steps.
 - Added a governance validation guard that keeps the contributor guide's required validation command documented.
 - Added validation that case IDs in the representative coverage map still exist.

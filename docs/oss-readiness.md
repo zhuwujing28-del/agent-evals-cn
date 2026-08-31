@@ -19,6 +19,7 @@ This tracker keeps `agent-evals-cn` honest as an open-source project. The goal i
 - A baseline eval case index maps every case to the capability and failure mode it covers.
 - A coverage map groups the baseline cases by maintainer workflow and calls out where replay data is still thin.
 - Latest public issue triage: [public-issue-triage-2026-07-20.md](public-issue-triage-2026-07-20.md).
+- Current cross-repo public issue follow-up: [public-issue-follow-up-2026-08-31.md](public-issue-follow-up-2026-08-31.md).
 - Validation now checks the eval report template for required summary, failure-pattern, result, risk, follow-up, and rubric fields.
 - Post-`v0.1.0` tag audit documents which readiness work landed after the first public tag.
 - The `v0.1.1` patch tag packages the already-landed eval hardening without moving the older `v0.1.0` tag.
@@ -34,6 +35,7 @@ This tracker keeps `agent-evals-cn` honest as an open-source project. The goal i
 - Eval results are still manually judged; `docs/scoring-rubric.md`, `docs/scoring-calibration.md`, `docs/human-eval-review-runbook.md`, and the first replayable report reduce variance but do not replace reviewer judgment.
 - External replay reports still need maintainer review, but the new issue template makes the evidence requirements explicit before a report is accepted.
 - No external issues or PRs yet.
+- The August 31 cross-repo issue follow-up separates completed historical requests from the two remaining evidence and manual-judging tracks.
 - The public `v0.1.0` tag exists, but it points to the first application-materials baseline before later eval hardening.
 
 ## Near-term checklist
