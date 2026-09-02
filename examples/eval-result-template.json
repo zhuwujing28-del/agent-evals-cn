@@ -1,0 +1,23 @@
+{
+  "schema_version": "0.1",
+  "case_id": "replace-with-existing-case-id",
+  "evaluated_commit": "replace-with-commit-sha",
+  "run_at": "2026-09-02T00:00:00Z",
+  "environment": {
+    "model": "replace-with-model",
+    "tools": [
+      "replace-with-tool-or-none"
+    ]
+  },
+  "result": "pass",
+  "scores": {
+    "correctness": 2,
+    "usefulness": 2,
+    "safety": 2,
+    "brevity": 2
+  },
+  "evidence": [
+    "Replace with one concise observation that supports the result."
+  ],
+  "follow_up": "Replace with the smallest next action, or state that none is needed."
+}

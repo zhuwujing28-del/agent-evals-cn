@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import json
 import re
 import sys
 from pathlib import Path
@@ -15,6 +16,7 @@ COVERAGE_MAP = ROOT / "docs" / "eval-coverage-map.md"
 REPORT_INDEX = ROOT / "docs" / "eval-report-index.md"
 REPORTS = ROOT / "docs" / "eval-reports"
 REPORT_TEMPLATE = EXAMPLES / "eval-report-template.md"
+RESULT_TEMPLATE = EXAMPLES / "eval-result-template.json"
 REPORT_REVIEW_TEMPLATE = ROOT / ".github" / "ISSUE_TEMPLATE" / "eval_report_review.md"
 GOVERNANCE_FILES = [
     ROOT / "CONTRIBUTING.md",
@@ -78,6 +80,19 @@ REPLAYABLE_REPORT_REQUIRED = [
     "## Regression risks",
     "## Next eval to add",
 ]
+RESULT_REQUIRED = [
+    "schema_version",
+    "case_id",
+    "evaluated_commit",
+    "run_at",
+    "environment",
+    "result",
+    "scores",
+    "evidence",
+    "follow_up",
+]
+RESULT_SCORE_KEYS = {"correctness", "usefulness", "safety", "brevity"}
+RESULT_VALUES = {"pass", "partial", "fail"}
 
 
 def validate_eval_cases() -> list[str]:
@@ -179,6 +194,38 @@ def validate_report_template() -> list[str]:
         for item in REPORT_REQUIRED
         if item not in text
     ]
+
+
+def validate_result_template() -> list[str]:
+    if not RESULT_TEMPLATE.exists():
+        return [f"{RESULT_TEMPLATE.relative_to(ROOT)}: missing structured result template"]
+
+    rel_path = RESULT_TEMPLATE.relative_to(ROOT)
+    try:
+        data = json.loads(RESULT_TEMPLATE.read_text(encoding="utf-8"))
+    except json.JSONDecodeError as error:
+        return [f"{rel_path}: invalid JSON ({error.msg})"]
+
+    errors = [
+        f"{rel_path}: missing {item}"
+        for item in RESULT_REQUIRED
+        if item not in data
+    ]
+    if errors:
+        return errors
+
+    if data["result"] not in RESULT_VALUES:
+        errors.append(f"{rel_path}: result must be one of {sorted(RESULT_VALUES)}")
+    if set(data["scores"]) != RESULT_SCORE_KEYS:
+        errors.append(f"{rel_path}: scores must contain {sorted(RESULT_SCORE_KEYS)}")
+    elif any(
+        not isinstance(score, int) or not 0 <= score <= 2
+        for score in data["scores"].values()
+    ):
+        errors.append(f"{rel_path}: scores must be integers from 0 to 2")
+    if not isinstance(data["evidence"], list) or not data["evidence"]:
+        errors.append(f"{rel_path}: evidence must be a non-empty list")
+    return errors
 
 
 def validate_report_review_template() -> list[str]:
@@ -323,6 +370,13 @@ def main() -> int:
     if report_errors:
         print("Validation failed:")
         for error in report_errors:
+            print(f"- {error}")
+        return 1
+
+    result_errors = validate_result_template()
+    if result_errors:
+        print("Validation failed:")
+        for error in result_errors:
             print(f"- {error}")
         return 1
 

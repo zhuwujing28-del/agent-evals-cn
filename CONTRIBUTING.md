@@ -9,6 +9,8 @@
 - 新增 eval case 已同步更新 `docs/eval-case-index.md`。
 - case 中不包含真实密钥、私有日志、未脱敏漏洞细节或账号数据。
 - 期望行为和失败判定足够具体，维护者可以独立复核。
+- 如果提交 replay 结果，优先同时附上 `examples/eval-result-template.json`
+  的结构化结果和 Markdown 解释，并保持 case、commit、分数和证据一致。
 
 ## 推荐流程
 

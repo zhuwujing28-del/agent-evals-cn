@@ -20,5 +20,8 @@ external evidence small, replayable, and easy for a maintainer to verify.
 ## Before opening the issue
 
 - Compare the result with [`docs/scoring-rubric.md`](scoring-rubric.md) and [`docs/scoring-calibration.md`](scoring-calibration.md).
+- Copy [`examples/eval-result-template.json`](../examples/eval-result-template.json)
+  and keep its result, scores, commit, environment, and evidence aligned with
+  the Markdown report.
 - Choose one smallest follow-up: update the skill, update the case, add a replayable report, improve docs, or record a limitation.
 - Paste the sanitized material into the [eval report review template](../.github/ISSUE_TEMPLATE/eval_report_review.md).

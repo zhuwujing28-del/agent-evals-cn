@@ -28,11 +28,13 @@ This tracker keeps `agent-evals-cn` honest as an open-source project. The goal i
 - A third replayable report, [`2026-08-26-maintainer-usage-report-intake.md`](eval-reports/2026-08-26-maintainer-usage-report-intake.md), treats one sanitized usage report as evidence without inflating adoption claims.
 - A replayable eval report index now maps each published report to the case and evidence it contributes.
 - Validation now checks the public eval report review issue template for case ID, version, rubric, calibration, scoring dimensions, and result labels.
+- A structured JSON replay-result template records stable case, commit, score,
+  environment, result, and evidence fields for repeatable comparison.
 
 ## Current gaps
 
 - More replayed failure cases from live maintainer work are needed.
-- Eval results are still manually judged; `docs/scoring-rubric.md`, `docs/scoring-calibration.md`, `docs/human-eval-review-runbook.md`, and the first replayable report reduce variance but do not replace reviewer judgment.
+- Eval results are still manually judged; `docs/scoring-rubric.md`, `docs/scoring-calibration.md`, `docs/human-eval-review-runbook.md`, and the replayable reports reduce variance but do not replace reviewer judgment. The structured JSON result makes stable fields comparable without making subjective scores objective.
 - External replay reports still need maintainer review, but the new issue template makes the evidence requirements explicit before a report is accepted.
 - No external issues or PRs yet.
 - The August 31 cross-repo issue follow-up separates completed historical requests from the two remaining evidence and manual-judging tracks.
