@@ -30,12 +30,16 @@ This tracker keeps `agent-evals-cn` honest as an open-source project. The goal i
 - Validation now checks the public eval report review issue template for case ID, version, rubric, calibration, scoring dimensions, and result labels.
 - A structured JSON replay-result template records stable case, commit, score,
   environment, result, and evidence fields for repeatable comparison.
+- An independent replay protocol defines the minimum evidence package and keeps
+  replay evidence separate from claims about external adoption.
 
 ## Current gaps
 
 - More replayed failure cases from live maintainer work are needed.
 - Eval results are still manually judged; `docs/scoring-rubric.md`, `docs/scoring-calibration.md`, `docs/human-eval-review-runbook.md`, and the replayable reports reduce variance but do not replace reviewer judgment. The structured JSON result makes stable fields comparable without making subjective scores objective.
 - External replay reports still need maintainer review, but the new issue template makes the evidence requirements explicit before a report is accepted.
+- No independently replayed report from a different maintainer or environment
+  has been accepted yet; the protocol is ready for the first submission.
 - No external issues or PRs yet.
 - The August 31 cross-repo issue follow-up separates completed historical requests from the two remaining evidence and manual-judging tracks.
 - The public `v0.1.0` tag exists, but it points to the first application-materials baseline before later eval hardening.

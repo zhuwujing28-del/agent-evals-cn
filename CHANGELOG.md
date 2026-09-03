@@ -8,6 +8,9 @@ This project follows a lightweight 0.x release process while the eval method, te
 
 ### Added
 
+- Added an independent replay protocol describing the minimum evidence package,
+  environment recording, maintainer review, and adoption-claim boundaries.
+
 - Added a validated structured JSON replay-result template and companion guide
   so case, commit, score, environment, result, and evidence fields can be
   compared consistently alongside the human-readable Markdown report.

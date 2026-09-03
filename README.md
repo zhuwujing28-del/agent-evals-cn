@@ -27,6 +27,7 @@
 | `docs/oss-readiness.md` | 开源维护和申请准备度追踪 |
 | `docs/eval-coverage-map.md` | 评测覆盖分组映射 |
 | `docs/replay-submission-checklist.md` | 外部 replay 报告提交前的脱敏、评分和证据检查 |
+| `docs/independent-replay-protocol.md` | 不同环境复现已有 case 的最小证据包和复核边界 |
 | `docs/public-issue-follow-up-2026-08-31.md` | 跨仓库公开 issue 的当前证据和维护动作 |
 | `docs/usage-reports/` | 真实使用记录和跨仓库评测报告 |
 | `scripts/validate.py` | 基础结构校验 |
