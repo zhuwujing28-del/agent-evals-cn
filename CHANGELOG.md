@@ -8,6 +8,9 @@ This project follows a lightweight 0.x release process while the eval method, te
 
 ### Added
 
+- Added a 2026-09-07 application evidence snapshot that records the newly
+  published public head, local validation, and the observation date for
+  repository counts.
 - Added a 2026-09-06 application evidence snapshot tying both public
   repositories, validation runs, and adoption-claim boundaries to observed
   state.

@@ -32,7 +32,7 @@ This tracker keeps `agent-evals-cn` honest as an open-source project. The goal i
   environment, result, and evidence fields for repeatable comparison.
 - An independent replay protocol defines the minimum evidence package and keeps
   replay evidence separate from claims about external adoption.
-- The [2026-09-06 application evidence snapshot](application-evidence-snapshot-2026-09-06.md)
+- The [2026-09-07 application evidence snapshot](application-evidence-snapshot-2026-09-07.md)
   records the current public heads, CI runs, repository counts, and claim
   boundaries for application review.
 
