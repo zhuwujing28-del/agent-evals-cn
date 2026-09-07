@@ -6,22 +6,23 @@
 
 ## Public repository state
 
-| Repository | Public head | Latest push observed | Stars / forks / open issues |
+| Repository | Evidence commit observed before this refresh | Latest push observed | Stars / forks / open issues |
 | --- | --- | --- | ---: |
-| `zhuwujing28-del/agent-evals-cn` | `83427cf` — Add current application evidence snapshot | 2026-09-07, confirmed with `git ls-remote` | 1 / 0 / 2 |
-| `zhuwujing28-del/codex-skills-cn` | `132f68c` — Refresh application evidence snapshot | 2026-09-05, confirmed with `git ls-remote` | 1 / 0 / 7 |
+| `zhuwujing28-del/agent-evals-cn` | `6d137a2` — Refresh application evidence snapshot | 2026-09-07, confirmed with GitHub REST metadata and public refs | 1 / 0 / 2 |
+| `zhuwujing28-del/codex-skills-cn` | `11d7957` — Refresh application evidence snapshot | 2026-09-07, confirmed with GitHub REST metadata and public refs | 1 / 0 / 7 |
 
 Repository counts are the latest successful public metadata observation from
-2026-09-06. The API was rate-limited during this run, so counts are retained
-with that observation date rather than presented as newly rechecked values.
+2026-09-07. The commits above are the validated evidence commits observed
+before this documentation refresh, not a self-referential claim that this file's
+own commit is already independently validated.
 
 ## Validation evidence
 
 - Local `scripts\validate.py` passes for `agent-evals-cn`.
 - Local `scripts\validate-skills.py` reports 12 skills for `codex-skills-cn`.
 - Both worktrees are clean and aligned with their public `origin/main` heads.
-- The newly published `83427cf` includes the current application snapshot and
-  the previously documented independent-replay protocol.
+- The newly published `6d137a2` refreshes the current application snapshot and
+  retains the previously documented independent-replay protocol.
 
 ## Evidence currently supported
 
