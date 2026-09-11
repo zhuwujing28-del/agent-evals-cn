@@ -33,8 +33,9 @@ This tracker keeps `agent-evals-cn` honest as an open-source project. The goal i
 - An independent replay protocol defines the minimum evidence package and keeps
   replay evidence separate from claims about external adoption.
 - The [2026-09-07 application evidence snapshot](application-evidence-snapshot-2026-09-07.md)
-  records the current public heads, CI runs, repository counts, and claim
-  boundaries for application review.
+  records public heads, CI runs, repository counts, and claim boundaries as
+  observed on September 7, 2026. It is a dated record, not a live status
+  claim; recheck GitHub before using it for a new application review.
 
 ## Current gaps
 
