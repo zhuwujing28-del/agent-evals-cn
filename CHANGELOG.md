@@ -8,6 +8,8 @@ This project follows a lightweight 0.x release process while the eval method, te
 
 ### Added
 
+- Added a 2026-09-15 application evidence snapshot tied to the latest
+  observed public heads and successful validation runs.
 - Clarified that the dated application evidence snapshot is a point-in-time
   record and must be checked against current GitHub state before reuse.
 - Refreshed the 2026-09-07 application evidence snapshot so public evidence
