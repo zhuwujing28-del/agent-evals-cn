@@ -95,6 +95,74 @@ RESULT_SCORE_KEYS = {"correctness", "usefulness", "safety", "brevity"}
 RESULT_VALUES = {"pass", "partial", "fail"}
 
 
+def validate_result_data(
+    data: object,
+    label: str,
+    case_ids: set[str] | None = None,
+) -> list[str]:
+    if not isinstance(data, dict):
+        return [f"{label}: top-level value must be an object"]
+
+    errors = [
+        f"{label}: missing {item}"
+        for item in RESULT_REQUIRED
+        if item not in data
+    ]
+    if errors:
+        return errors
+
+    if data["schema_version"] != "0.1":
+        errors.append(f"{label}: schema_version must be '0.1'")
+
+    if not isinstance(data["case_id"], str) or not data["case_id"].strip():
+        errors.append(f"{label}: case_id must be a non-empty string")
+    elif case_ids is not None and data["case_id"] not in case_ids:
+        errors.append(f"{label}: case_id is not present in the baseline case index")
+
+    if not isinstance(data["evaluated_commit"], str) or not data["evaluated_commit"].strip():
+        errors.append(f"{label}: evaluated_commit must be a non-empty string")
+    if not isinstance(data["run_at"], str) or not data["run_at"].strip():
+        errors.append(f"{label}: run_at must be a non-empty ISO 8601 string")
+
+    environment = data["environment"]
+    if not isinstance(environment, dict):
+        errors.append(f"{label}: environment must be an object")
+    else:
+        if not isinstance(environment.get("model"), str) or not environment["model"].strip():
+            errors.append(f"{label}: environment.model must be a non-empty string")
+        tools = environment.get("tools")
+        if not isinstance(tools, list) or any(
+            not isinstance(tool, str) or not tool.strip() for tool in tools
+        ):
+            errors.append(f"{label}: environment.tools must be a list of non-empty strings")
+
+    if data["result"] not in RESULT_VALUES:
+        errors.append(f"{label}: result must be one of {sorted(RESULT_VALUES)}")
+
+    scores = data["scores"]
+    if not isinstance(scores, dict):
+        errors.append(f"{label}: scores must be an object")
+    else:
+        if set(scores) != RESULT_SCORE_KEYS:
+            errors.append(f"{label}: scores must contain {sorted(RESULT_SCORE_KEYS)}")
+        elif any(
+            not isinstance(score, int) or isinstance(score, bool) or not 0 <= score <= 2
+            for score in scores.values()
+        ):
+            errors.append(f"{label}: scores must be integers from 0 to 2")
+
+    evidence = data["evidence"]
+    if not isinstance(evidence, list) or not evidence:
+        errors.append(f"{label}: evidence must be a non-empty list")
+    elif any(not isinstance(item, str) or not item.strip() for item in evidence):
+        errors.append(f"{label}: evidence items must be non-empty strings")
+
+    if not isinstance(data["follow_up"], str) or not data["follow_up"].strip():
+        errors.append(f"{label}: follow_up must be a non-empty string")
+
+    return errors
+
+
 def validate_eval_cases() -> list[str]:
     errors: list[str] = []
     case_ids: dict[str, Path] = {}
@@ -206,26 +274,7 @@ def validate_result_template() -> list[str]:
     except json.JSONDecodeError as error:
         return [f"{rel_path}: invalid JSON ({error.msg})"]
 
-    errors = [
-        f"{rel_path}: missing {item}"
-        for item in RESULT_REQUIRED
-        if item not in data
-    ]
-    if errors:
-        return errors
-
-    if data["result"] not in RESULT_VALUES:
-        errors.append(f"{rel_path}: result must be one of {sorted(RESULT_VALUES)}")
-    if set(data["scores"]) != RESULT_SCORE_KEYS:
-        errors.append(f"{rel_path}: scores must contain {sorted(RESULT_SCORE_KEYS)}")
-    elif any(
-        not isinstance(score, int) or not 0 <= score <= 2
-        for score in data["scores"].values()
-    ):
-        errors.append(f"{rel_path}: scores must be integers from 0 to 2")
-    if not isinstance(data["evidence"], list) or not data["evidence"]:
-        errors.append(f"{rel_path}: evidence must be a non-empty list")
-    return errors
+    return validate_result_data(data, str(rel_path))
 
 
 def validate_report_review_template() -> list[str]:

@@ -25,5 +25,25 @@ compare or validate without forcing subjective rubric notes into a rigid format.
 4. Run `python .\scripts\validate.py`; the validator checks that the template
    remains valid JSON and retains the required fields and result values.
 
+## Validate a completed result
+
+After replacing the placeholders, validate the result itself against the
+baseline case index:
+
+```powershell
+python .\scripts\validate-result.py .\path\to\result.json
+```
+
+For CI or shell pipelines, pass the JSON through standard input:
+
+```powershell
+Get-Content .\path\to\result.json | python .\scripts\validate-result.py -
+```
+
+This check validates the schema version, existing case ID, commit and
+environment metadata, score shape, evidence strings, and follow-up text. It
+does not decide whether the agent output deserves `pass`, `partial`, or `fail`;
+that result and the four scores still require human review.
+
 The JSON envelope improves repeatability; it does not turn manually judged
 scores into objective measurements or claim external adoption.

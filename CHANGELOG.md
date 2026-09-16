@@ -8,6 +8,8 @@ This project follows a lightweight 0.x release process while the eval method, te
 
 ### Added
 
+- Added `scripts/validate-result.py` for deterministic validation of completed
+  structured replay results against the baseline case index.
 - Added a 2026-09-15 application evidence snapshot tied to the latest
   observed public heads and successful validation runs.
 - Clarified that the dated application evidence snapshot is a point-in-time
