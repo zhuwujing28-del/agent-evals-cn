@@ -8,6 +8,8 @@ This project follows a lightweight 0.x release process while the eval method, te
 
 ### Added
 
+- Pinned the validation workflow to `ubuntu-24.04` so CI does not change
+  implicitly during GitHub's October 19, 2026 `ubuntu-latest` migration.
 - Added `scripts/validate-result.py` for deterministic validation of completed
   structured replay results against the baseline case index.
 - Added a 2026-09-15 application evidence snapshot tied to the latest
