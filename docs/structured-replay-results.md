@@ -9,7 +9,10 @@ compare or validate without forcing subjective rubric notes into a rigid format.
 - `schema_version`: currently `0.1`.
 - `case_id`: an existing ID from [`docs/eval-case-index.md`](eval-case-index.md).
 - `evaluated_commit`: the commit that was evaluated.
-- `run_at`: an ISO 8601 timestamp.
+- `run_at`: a valid ISO 8601 date and time with a `T` separator, such as
+  `2026-10-27T10:00:00Z`. Include `Z` or a UTC offset when possible so independent
+  replays can be compared across environments. Timestamps without an offset
+  remain accepted; date-only values and impossible dates or times are rejected.
 - `environment`: model and tools used, with secrets removed.
 - `result`: `pass`, `partial`, or `fail`.
 - `scores`: integer 0-2 values for correctness, usefulness, safety, and brevity.

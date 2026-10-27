@@ -18,3 +18,5 @@ jobs:
           python-version: "3.11"
       - name: Validate structure
         run: python scripts/validate.py
+      - name: Test structured replay validation
+        run: python -m unittest discover -s scripts -p "test_*.py" -v

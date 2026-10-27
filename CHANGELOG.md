@@ -8,6 +8,11 @@ This project follows a lightweight 0.x release process while the eval method, te
 
 ### Added
 
+- Added standard-library regression tests for structured replay validation,
+  including CLI exit codes, malformed result types, and invalid timestamps.
+  CI now runs these tests alongside the repository structure checks.
+- Fixed replay validation to report non-string result values instead of raising
+  `TypeError`, and reject invalid ISO 8601 timestamps previously accepted as text.
 - Pinned the validation workflow to `ubuntu-24.04` so CI does not change
   implicitly during GitHub's October 19, 2026 `ubuntu-latest` migration.
 - Added `scripts/validate-result.py` for deterministic validation of completed

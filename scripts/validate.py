@@ -3,6 +3,7 @@ from __future__ import annotations
 import json
 import re
 import sys
+from datetime import datetime
 from pathlib import Path
 
 
@@ -121,8 +122,14 @@ def validate_result_data(
 
     if not isinstance(data["evaluated_commit"], str) or not data["evaluated_commit"].strip():
         errors.append(f"{label}: evaluated_commit must be a non-empty string")
-    if not isinstance(data["run_at"], str) or not data["run_at"].strip():
-        errors.append(f"{label}: run_at must be a non-empty ISO 8601 string")
+    run_at = data["run_at"]
+    if not isinstance(run_at, str) or "T" not in run_at:
+        errors.append(f"{label}: run_at must be an ISO 8601 timestamp with a 'T' separator")
+    else:
+        try:
+            datetime.fromisoformat(run_at.replace("Z", "+00:00"))
+        except ValueError:
+            errors.append(f"{label}: run_at must be a valid ISO 8601 timestamp")
 
     environment = data["environment"]
     if not isinstance(environment, dict):
@@ -136,7 +143,7 @@ def validate_result_data(
         ):
             errors.append(f"{label}: environment.tools must be a list of non-empty strings")
 
-    if data["result"] not in RESULT_VALUES:
+    if not isinstance(data["result"], str) or data["result"] not in RESULT_VALUES:
         errors.append(f"{label}: result must be one of {sorted(RESULT_VALUES)}")
 
     scores = data["scores"]

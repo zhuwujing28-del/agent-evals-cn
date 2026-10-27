@@ -21,6 +21,7 @@
 
    ```powershell
    python .\scripts\validate.py
+   python -m unittest discover -s scripts -p "test_*.py" -v
    ```
 
 5. 在 PR 中说明目标能力、主要失败模式、验证结果和任何安全边界。
