@@ -8,6 +8,8 @@ This project follows a lightweight 0.x release process while the eval method, te
 
 ### Added
 
+- Updated GitHub Actions to Node 24-compatible major releases after CI began
+  reporting Node 20 deprecation warnings.
 - Added standard-library regression tests for structured replay validation,
   including CLI exit codes, malformed result types, and invalid timestamps.
   CI now runs these tests alongside the repository structure checks.
