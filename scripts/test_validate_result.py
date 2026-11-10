@@ -3,6 +3,7 @@ from __future__ import annotations
 import json
 import subprocess
 import sys
+import tempfile
 import unittest
 from pathlib import Path
 
@@ -117,6 +118,21 @@ class ValidateResultTests(unittest.TestCase):
                 self.assertEqual(completed.returncode, exit_code, output)
                 self.assertIn(message, output)
                 self.assertNotIn("Traceback", output)
+
+    def test_cli_invalid_utf8_file_returns_diagnostic(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "result.json"
+            path.write_bytes(b'{"evidence": ["\xff"]}')
+            completed = subprocess.run(
+                [sys.executable, str(ROOT / "scripts" / "validate-result.py"), str(path)],
+                capture_output=True,
+                text=True,
+                timeout=10,
+            )
+        output = completed.stdout + completed.stderr
+        self.assertEqual(completed.returncode, 1, output)
+        self.assertIn("Validation failed:", output)
+        self.assertNotIn("Traceback", output)
 
 
 if __name__ == "__main__":

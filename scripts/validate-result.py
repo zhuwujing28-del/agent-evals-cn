@@ -40,7 +40,7 @@ def main() -> int:
             raw = path.read_text(encoding="utf-8")
             label = str(path)
         data = json.loads(raw)
-    except (OSError, json.JSONDecodeError) as error:
+    except (OSError, UnicodeDecodeError, json.JSONDecodeError) as error:
         print(f"Validation failed: {error}", file=sys.stderr)
         return 1
 

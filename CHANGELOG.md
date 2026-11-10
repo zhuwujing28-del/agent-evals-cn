@@ -8,6 +8,8 @@ This project follows a lightweight 0.x release process while the eval method, te
 
 ### Added
 
+- Fixed the replay-result CLI to report invalid UTF-8 input as a validation
+  failure instead of an unhandled traceback, with a file-input regression test.
 - Updated GitHub Actions to Node 24-compatible major releases after CI began
   reporting Node 20 deprecation warnings.
 - Added standard-library regression tests for structured replay validation,
